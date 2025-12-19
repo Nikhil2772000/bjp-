@@ -21,39 +21,49 @@
             --footer-bg: #212529;
         }
 
+        /* BODY */
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
-            background: #f8f9fa;
+            background: rgb(247, 168, 168);
             overflow-x: hidden;
             margin: 0;
-            background: rgb(247, 168, 168);
-
         }
 
-
-
-        /* --- Header & Navigation --- */
+        /* HEADER / NAVBAR */
         .main-header {
             transition: all 0.3s ease;
             padding: 10px 0;
-            background: rgba(255, 255, 255, 0.9);
-            /* Slight visible background for mobile */
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            display: flex;
+            align-items: center;
         }
 
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* SCROLL SHADOW */
         .navbar-scrolled {
             background: var(--white) !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        /* Brand Logo */
+        /* BRAND LOGO */
         .brand-logo {
             height: 50px;
-            width: 100px;
+            width: auto;
             transition: transform 0.3s ease-in-out;
         }
 
-        /* Brand Text */
+        /* BRAND TEXT */
         .brand-text {
             color: #333;
             font-size: 1.1rem;
@@ -63,7 +73,7 @@
             transition: color 0.3s ease-in-out;
         }
 
-        /* Hover Animation */
+        /* HOVER EFFECTS */
         .brand-animate:hover .brand-logo {
             transform: scale(1.1) rotate(-3deg);
         }
@@ -72,7 +82,7 @@
             color: #f51414;
         }
 
-        /* Fade-in Animation */
+        /* FADE SLIDE ANIMATION */
         .brand-animate {
             animation: fadeSlideIn 1s ease forwards;
             opacity: 0;
@@ -90,15 +100,112 @@
             }
         }
 
-
+        /**************************************
+   NAV LINKS — DESKTOP STYLE (CENTERED)
+**************************************/
         .nav-link {
             font-weight: 500;
             color: #333 !important;
+            padding: 8px 15px;
             margin: 0 5px;
+            text-align: center;
+            display: block;
         }
 
         .nav-link:hover {
             color: var(--bjp-orange) !important;
+        }
+
+        /**************************************
+   LANGUAGE BUTTON
+**************************************/
+        #lang-btn {
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid var(--bjp-orange);
+            color: var(--bjp-orange);
+            background: transparent;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        #lang-btn:hover {
+            background: var(--bjp-orange);
+            color: white;
+        }
+
+        /**************************************
+   ORANGE BUTTON
+**************************************/
+        .btn-orange {
+            background: var(--bjp-orange);
+            color: white !important;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 10px 20px;
+            border: none;
+        }
+
+        /**************************************
+   MOBILE RESPONSIVE NAVBAR CENTER
+**************************************/
+        @media (max-width: 991px) {
+
+            /* Push toggle icon to right side */
+            .navbar-toggler {
+                margin-left: auto;
+                margin-right: 10px;
+                border: none;
+                outline: none;
+                box-shadow: none !important;
+            }
+
+            /* Toggle Icon size */
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* Navbar links container — centered */
+            .navbar-collapse {
+                background: white;
+                padding: 25px 20px;
+                border-radius: 12px;
+                margin-top: 12px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            /* Mobile menu links — centered full width */
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 14px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            /* Remove last border */
+            .navbar-nav .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+        }
+
+        /**************************************
+   SMALL MOBILE TWEAKS
+**************************************/
+        @media (max-width: 480px) {
+            .brand-logo {
+                height: 40px;
+            }
+
+            #lang-btn {
+                padding: 5px 12px;
+            }
         }
 
         /* --- Slider --- */

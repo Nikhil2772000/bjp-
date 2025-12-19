@@ -19,6 +19,7 @@
             --footer-bg: #212529;
         }
 
+        /* BODY */
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
@@ -26,21 +27,25 @@
             overflow-x: hidden;
         }
 
-        /* --- Navbar --- */
+        /* HEADER / NAVBAR */
         .main-header {
             transition: all 0.3s ease;
             padding: 10px 0;
             background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
         }
 
-        /* Brand Logo */
+        /* BRAND LOGO */
         .brand-logo {
             height: 50px;
-            width: 100px;
+            width: auto;
             transition: transform 0.3s ease-in-out;
         }
 
-        /* Brand Text */
+        /* BRAND TEXT */
         .brand-text {
             color: #333;
             font-size: 1.1rem;
@@ -50,7 +55,7 @@
             transition: color 0.3s ease-in-out;
         }
 
-        /* Hover Animation */
+        /* BRAND HOVER ANIMATION */
         .brand-animate:hover .brand-logo {
             transform: scale(1.1) rotate(-3deg);
         }
@@ -59,7 +64,7 @@
             color: #f51414;
         }
 
-        /* Fade-in Animation */
+        /* BRAND FADE-IN ANIMATION */
         .brand-animate {
             animation: fadeSlideIn 1s ease forwards;
             opacity: 0;
@@ -77,16 +82,26 @@
             }
         }
 
+        /*******************************
+      NAV LINKS STYLING
+*******************************/
+        .navbar-nav {
+            align-items: center;
+        }
 
         .nav-link {
             font-weight: 500;
             color: #333 !important;
+            padding: 8px 15px;
+            text-align: center;
+            display: block;
         }
 
         .nav-link:hover {
             color: var(--bjp-orange) !important;
         }
 
+        /* LANGUAGE BUTTON */
         #lang-btn {
             cursor: pointer;
             font-weight: bold;
@@ -103,6 +118,7 @@
             color: white;
         }
 
+        /* ORANGE BUTTON */
         .btn-orange {
             background: var(--bjp-orange);
             color: white !important;
@@ -112,10 +128,11 @@
             border: none;
         }
 
-        /* --- Banner --- */
+        /* CONTACT BANNER */
         .contact-banner {
             height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/Images/budhana.avif") center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url("./assets/Images/budhana.avif") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,7 +141,7 @@
             margin-top: 70px;
         }
 
-        /* --- Contact Card --- */
+        /* CONTACT CONTAINER */
         .contact-section {
             margin-top: -80px;
             padding-bottom: 80px;
@@ -137,6 +154,7 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
+        /* CONTACT PANEL */
         .contact-info-panel {
             background: #1a1d20;
             color: white;
@@ -160,15 +178,16 @@
             margin-right: 15px;
         }
 
-        /* --- Language Support --- */
+        /* MARATHI TEXT */
         .lang-mr {
             display: none;
         }
 
-        /* --- Footer --- */
+        /* FOOTER */
         footer {
             background: var(--footer-bg);
             color: #bbb;
+            padding: 50px 0;
         }
 
         .footer-link {
@@ -188,22 +207,74 @@
             color: var(--bjp-orange) !important;
         }
 
-        /* --- Mobile Responsiveness --- */
+        /**************************************
+        MOBILE RESPONSIVE NAV
+**************************************/
         @media (max-width: 991px) {
+
+            /* Center Navbar Items */
+            .navbar-nav {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-nav .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-collapse {
+                background: white;
+                padding: 25px 20px;
+                border-radius: 12px;
+                margin-top: 12px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            /* Toggle Icon Right */
+            .navbar-toggler {
+                margin-left: auto;
+                border: none;
+                outline: none;
+                box-shadow: none !important;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
             .contact-info-panel {
                 padding: 30px;
+                text-align: center;
             }
 
             .contact-banner {
                 height: 300px;
             }
+        }
 
-            .navbar-collapse {
-                background: white;
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* SMALL MOBILE FIX */
+        @media (max-width: 480px) {
+            .brand-logo {
+                height: 40px;
+            }
+
+            #lang-btn {
+                padding: 5px 10px;
             }
         }
     </style>
