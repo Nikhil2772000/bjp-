@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharad Pawar Saheb's Contributions - NCP</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* ==========================================================
+   GLOBAL
+========================================================== */
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #c7dffe, #ffffff, #d9e7ff);
+            background-size: 300% 300%;
+            animation: gradientFlow 12s ease infinite;
+            color: #333;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ==========================================================
+   HEADER / NAVBAR
+========================================================== */
+        .main-header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 3px solid #007bff;
+            padding: 10px 20px;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .candidate-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: 600;
+            padding: 10px 18px !important;
+            transition: all 0.25s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn {
+            background: #0056b3;
+            color: #fff !important;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-btn:hover {
+            background: #004494;
+            transform: translateY(-2px);
+        }
+
+        .marathi-btn {
+            background: #d9534f;
+        }
+
+        .marathi-btn:hover {
+            background: #b44440;
+        }
+
+        .social-links img {
+            width: 28px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.15);
+        }
+
+        /* ==========================================================
+   HERO SECTION
+========================================================== */
+        .hero-section {
+            position: relative;
+            height: 55vh;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+            animation: fadeHero 1.3s ease forwards;
+        }
+
+        @keyframes fadeHero {
+            from {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(65%);
+        }
+
+        .hero-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 15px;
+            color: #fff;
+            animation: textFade 1.5s ease forwards;
+        }
+
+        @keyframes textFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+        }
+
+        /* ==========================================================
+   CONTENT
+========================================================== */
+        .custom-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 40px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            animation: fadeSlideUp 1s ease forwards;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #005fcc;
+            font-weight: 700;
+            border-bottom: 3px solid #005fcc;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* ==========================================================
+   FOOTER
+========================================================== */
+        .custom-footer {
+            margin-top: 40px;
+            padding: 25px 0;
+            background: #f9f9f9;
+            border-top: 2px solid #ddd;
+            font-size: 0.95rem;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* LEFT */
+        .footer-left {
+            max-width: 65%;
+        }
+
+        .footer-title {
+            margin-bottom: 6px;
+        }
+
+        .footer-message {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* RIGHT */
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-dev {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* ICONS */
+        .footer-social {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .custom-footer-icon {
+            width: 28px;
+            transition: transform 0.25s ease;
+        }
+
+        .custom-footer-icon:hover {
+            transform: scale(1.15);
+        }
+
+        /* ==========================================================
+   SCROLL ANIMATIONS
+========================================================== */
+        .fadeBox,
+        .bio-section,
+        .content-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .visible,
+        .in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================
+   RESPONSIVE
+========================================================== */
+        @media (max-width: 991px) {
+
+            .candidate-name {
+                display: none;
+            }
+
+            #navbarNav {
+                background: #fff;
+                margin-top: 10px;
+                padding: 15px;
+                border-radius: 12px;
+                border-top: 2px solid #007bff;
+            }
+
+            .nav-link {
+                padding: 12px 0 !important;
+                text-align: center;
+            }
+
+            .nav-btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .social-links {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .hero-section {
+                height: 40vh;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-left,
+            .footer-right {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .hero-section {
+                height: 32vh;
+            }
+
+            .hero-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .custom-container {
+                padding: 20px;
+            }
+        }
+
+
+        /* ================= GLOBAL CSS RESET ================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* ================= CONTACT BANNER SECTION ================ */
+        .contact-banner {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background: url("../assets/Images/contact\ us.jpg") center/cover no-repeat;
+        }
+
+        .banner-overlay {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            color: white;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* ================= CONTACT WRAPPER ================ */
+        .contact-form-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* ================= LEFT SECTION ================ */
+        .contact-left {
+            flex: 1;
+        }
+
+        .left-title {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .left-desc {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* INFO BOX */
+        .contact-info-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            transition: .3s ease;
+        }
+
+        .contact-info-box:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-info-box i {
+            font-size: 22px;
+            color: #ff6600;
+        }
+
+        .contact-info-box h4 {
+            margin-bottom: 4px;
+            font-size: 18px;
+        }
+
+        .contact-info-box p {
+            color: #666;
+        }
+
+        /* ================= RIGHT SECTION FORM ================ */
+        .contact-right {
+            flex: 1.3;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-box {
+            width: 100%;
+        }
+
+        /* INPUT ROW */
+        .row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .row input {
+            width: 50%;
+        }
+
+        /* INPUT + SELECT + TEXTAREA STYLE */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 15px;
+            background: #fff;
+            transition: .3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #ff6600;
+        }
+
+        /* BUTTON */
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #ff4500;
+        }
+
+        /* ================= RESPONSIVE DESIGN (MOBILE) ================ */
+        @media (max-width: 900px) {
+            .contact-wrapper {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .banner-content h1 {
+                font-size: 32px;
+            }
+
+            .contact-right {
+                padding: 25px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .row input {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+    <header class="main-header navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            <!-- LEFT: LOGO + NAME -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="../assets/Images/logo.png" alt="Logo" class="logo-img me-2">
+                <h1 class="candidate-name mb-0 d-none d-lg-block">Dr. Sulakshana Shilwant - Dhar</h1>
+            </a>
+
+            <!-- MOBILE TOGGLER (RIGHT SIDE) -->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <!-- NAV MENU -->
+        <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start">
+
+                <li class="nav-item"><a id="navHome" class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a id="navAbout" class="nav-link" href="about.html">About Me</a></li>
+                <li class="nav-item"><a id="navParty" class="nav-link" href="party.html">Party Info</a></li>
+                <li class="nav-item"><a id="navContact" class="nav-link" href="contact.html">Contact Us</a></li>
+
+                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                    <a href="vision.html" id="visionBtn" class="btn nav-btn w-100">My Vision</a>
+                </li>
+
+                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                    <button id="langToggleBtn" class="btn nav-btn marathi-btn w-100">Marathi</button>
+                </li>
+
+                <!-- SOCIAL ICONS -->
+                <li class="social-links nav-item ms-lg-3 d-flex justify-content-center align-items-center mt-2 mt-lg-0">
+                    <a href="#" class="me-2"><img src="../assets/Images/facebook.avif" alt="Facebook"></a>
+                    <a href="#" class="me-2"><img src="../assets/Images/instgram.webp" alt="Instagram"></a>
+                    <a href="#" class="me-2"><img src="../assets/Images/youtube.avif" alt="YouTube"></a>
+                    <a href="#"><img src="../assets/Images/twitter.png" alt="Twitter/X"></a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container mb-4">
+        <div class="hero-section">
+            <img src="../assets/Images/congress party.jpeg" alt="Sharad Pawar Saheb and NCP Leaders Banner">
+
+
+            <div class="hero-text text-center">
+                <h1 class="fw-bold">Victory of Tutari... Victory of Maharashtra's Self-Respect...!</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container custom-container">
+
+        <h3 class="text-center mb-4">A Legacy of Service — The Congress Party’s Guiding Philosophy</h3>
+
+        <p class="mt-3">
+            <strong>With warm regards,</strong><br>
+        </p>
+
+        <p class="text-muted fst-italic">
+            <strong>Respected Sharad Pawar Saheb</strong> has always placed the common people, the marginalized, the
+            economically
+            and socially disadvantaged, tribals, farmers, women, workers, and youth at the center of his politics.
+            Consequently,
+            during his extensive tenure as Chief Minister and as a Central Minister, he has made numerous decisions with
+            the
+            welfare of these groups in mind. Over a remarkable journey of 57 years in social and political arenas,
+            <strong>Sharad Pawar Saheb</strong> has faced many challenges. Yet, while preserving the legacy and ideals
+            of the
+            people's leader, the late Yashwantrao Chavan Saheb, he has continued to make significant contributions to
+            both the
+            country and Maharashtra, firmly believing that no struggle is too great when it comes to the welfare of the
+            people.
+        </p>
+
+        <p class="text-muted fst-italic">
+            Currently, political morality in the country has deteriorated due to certain specific elements. The ruling
+            government
+            has created disillusionment among ordinary citizens under the pretense of promoting development. Inflation
+            has risen
+            sharply, farmers who feed the nation are themselves starving, law and order concerns have intensified,
+            unemployment
+            continues to grow, and challenges in education and healthcare for the underprivileged are worsening.
+            Furthermore, in
+            the name of caste and religion, the ruling party is inciting the youth and creating divisions among
+            communities for
+            political gain.
+        </p>
+
+        <p class="text-muted fst-italic">
+            The government is misusing state machinery to suppress voices that oppose it, attempting to stifle
+            democratic dissent.
+            While the hardships of the underprivileged deepen, the ruling party remains callously preoccupied with
+            breaking
+            opposition parties and weakening social organizations. At such a time, it is essential for the people to
+            show the
+            rulers their rightful place. I firmly believe that in the coming period, this anti-Maharashtra government
+            will indeed
+            be shown its place by the self-respecting Tutaras of the Nationalist Congress Party and by the power of the
+            common
+            people.
+        </p>
+
+        <p class="text-muted fst-italic">
+            <strong>We will fight for the rights of ordinary people and for their overall development... We will win!
+                Thank you.</strong>
+        </p>
+
+
+
+
+
+
+        <hr>
+
+        <section class="mt-5">
+            <h2 class="text-center">Sharad Pawar Saheb's Notable Contributions to Pimpri-Chinchwad City</h2>
+
+            <p>
+                The city of Pimpri-Chinchwad emerged from the vision of the late Yashwantrao Chavan, late Dhananjayrao
+                Gadgil,
+                late Annasaheb Magar, and late Ramkrishna More. In the subsequent years, <strong>Sharad Pawar Saheb has
+                    played the
+                    most significant role in the city's development</strong>. His influence spans politics, social work,
+                trade, industry,
+                and labor.
+            </p>
+
+            <p>
+                Sharad Pawar Saheb’s name is prominent in every sector—politics, social work, trade, industry, and
+                labor. Every time
+                a new bridge, hospital, school, building, park, or swimming pool is inaugurated in the city,
+                Sharadchandra Pawar’s
+                name is invariably mentioned on the foundation and inauguration plaques.
+            </p>
+
+            <p>
+                The Nationalist Congress Party (NCP) is relatively recent. Before its formation, during the periods of
+                the
+                Socialist Congress and Congress parties, Pimpri-Chinchwad city and the surrounding villages received
+                strong support
+                from the revered Pawar Saheb—from village heads to every member of the gram panchayats.
+            </p>
+
+            <p>
+                Hundreds of respected names can be listed, such as late Madhukar Anna Pawle, late Fakirbhai Pansare,
+                late Sadaba
+                Kate, late Hiramman Barane, late Pandurang Kalate, late Bhiku Waghere Patil, late Vithoba Lande Patil,
+                late MLA
+                Lakshman Jagtap, late Rangnath Kudale, late Digambar Kalbhor, late Rangnath Fugge, late Sopanrao Bhoir,
+                and many
+                more. For all of them, the direction provided by Pawar Saheb was always considered the right path.
+            </p>
+
+            <p>
+                In 1989, a strike by Tata Motors workers severely affected the company's operations. The strike was
+                successfully
+                resolved by Sharad Pawar Saheb; otherwise, Tata was preparing to shut down operations here. In 1992–93,
+                <strong>188 acres of land</strong> were allocated for Tata’s expansion project (Mitsubishi-Benz),
+                attracting significant
+                investment and generating large-scale employment.
+            </p>
+
+            <p>
+                In 1994, Maharashtra was selected to host the National Games. Since Rajiv Gandhi had changed the format
+                to resemble
+                the Olympic Games in 1985, this was only the third national event. As Maharashtra's Chief Minister,
+                Sharad Pawar
+                Saheb ensured the successful organization of these sports competitions, setting a benchmark across the
+                country.
+                This led to the establishment of the <strong>Shiv Chhatrapati International Sports Complex</strong> in
+                Balewadi.
+            </p>
+
+            <p>
+                Sharad Pawar Saheb played a crucial role in the construction of the Bhakti Shakti Memorial in Nigdi,
+                commemorating
+                the historic meeting between Chhatrapati Shivaji Maharaj and Jagadguru Sant Tukaram Maharaj. Under the
+                leadership
+                of farmer leader Sharad Joshi, the farmers’ agitation was also resolved smoothly within four days,
+                thanks to Sharad
+                Pawar Saheb’s intervention.
+            </p>
+
+            <p>
+                The struggle of Bajaj Auto workers is a historic moment in the city’s labor movement. Its resolution was
+                made
+                possible through Pawar Saheb's leadership. The bond between industrialist Rahul Bajaj and Sharad Pawar
+                remains
+                strong to this day. For over twenty years, the Hindustan Antibiotics (HA) company has faced significant
+                challenges,
+                and regardless of which union represented the workers, Sharad Pawar Saheb consistently ensured central
+                government
+                support to address their issues.
+            </p>
+
+            <p>
+                Due to Sharad Pawar Saheb’s foresight, the <strong>Rajiv Gandhi IT Park</strong> was established in the
+                Hinjewadi area.
+                This transformative decision fueled the comprehensive development of Pimpri-Chinchwad and Pune
+                districts. Today,
+                the IT park provides employment to nearly <strong>five lakh youth</strong> and has greatly strengthened
+                the region’s economic
+                landscape.
+            </p>
+
+            <p>
+                Whether it was the <strong>JNNURM (Jawaharlal Nehru National Urban Renewal Mission)</strong> or the
+                Smart City initiative during
+                the UPA government, Sharad Pawar Saheb consistently ensured that Pimpri-Chinchwad received priority.
+                Initially, JNNURM
+                included only Pune city, but due to Pawar Saheb’s efforts, Pimpri-Chinchwad was added, resulting in a
+                development
+                allocation of <strong>₹3,500 crores</strong>.
+            </p>
+
+            <p>
+                In 2014, when Narendra Modi from the BJP became Prime Minister, only Pune was included in the Smart City
+                project.
+                However, Sharad Pawar Saheb ensured that Pimpri-Chinchwad was recognized as an independent city and
+                included in the
+                scheme, enabling it to benefit from numerous major and minor development projects. Today, development
+                across every
+                corner of the city reflects his lasting influence.
+            </p>
+
+            <p>
+                For patients coming from Pune district and across Maharashtra, Sharad Pawar Saheb played a key role in
+                establishing
+                the <strong>Yashwantrao Chavan Memorial (YCM) Hospital</strong> in Pimpri. Due to his contribution, YCM
+                Hospital has become a
+                leading healthcare institution offering excellent patient care.
+            </p>
+
+            <p>
+                Sharad Pawar Saheb has consistently focused on well-planned roads, infrastructure, education,
+                healthcare, and
+                employment in Pimpri-Chinchwad, laying the foundation for a true <strong>model Smart City</strong>.
+            </p>
+
+            <section class="mt-5">
+                <h2 class="text-center">
+                    Notable Contributions of Sharad Pawar Saheb to the Country and Maharashtra
+                </h2>
+                <ul>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who made provisions for 33% reservation for women in local
+                            self-government institutions</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who managed the situation systematically during the Killeari
+                            earthquake</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who opened the doors of the military for women by providing 11%
+                            reservation</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who named Marathwada University after Dr. Babasaheb Ambedkar</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who transformed Mumbai into a significant global center</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who restored Mumbai to its former glory amidst the crisis</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who took sports like Kabaddi and Wrestling to the international
+                            level</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who established the petrochemicals industry</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who achieved self-sufficiency in food grains</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who allocated a separate budget for tribal communities based on
+                            their population</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who revolutionized fruit orchard cultivation</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who established the Yashwantrao Chavan Open University</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who developed a network of Agricultural Science Centers</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who provided royal patronage to folk arts</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who has been a pillar of support for the World Marathi
+                            Conference</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who provided ₹72,000 crores in debt relief to farmers</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who elevated Pune to the global stage through the Rajiv Gandhi
+                            Hinjewadi IT Park</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who empowered and modernized the country's armed forces</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who empowered women in the informal sector for industry and
+                            business</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who worked in the educational field through the Rayat Education
+                            Society</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who provided rightful homes to municipal workers and
+                            representation to the working class</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who promoted research in the agricultural sector</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who established the National Disaster Response Force (NDRF)</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who laid the foundation for the Sant Peetha</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who was the first Chief Minister in the country to implement the
+                            Mandal Commission recommendations</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who enabled women to gain self-respect through education</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who ensured equal rights for both sons and daughters in paternal
+                            property</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who promoted agro-based industries</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who provided direction to the sugar industry through the
+                            Vasantdada Sugar Institute</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who provided compensation for excess sugarcane and gave relief
+                            to sugarcane growers</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who carried forward the thoughts and work of the late
+                            Yashwantrao Chavan through the Yashwantrao Chavan Foundation</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Pawar Saheb</strong> who resolved disputes within cricket organizations and expanded
+                            playing fields</p>
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+
+
+
+
+            <hr class="my-5">
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="custom-footer">
+                <div class="container footer-container">
+
+                    <!-- LEFT SIDE CONTENT -->
+                    <div class="footer-left">
+                        <p class="footer-title">
+                            <strong>© 2025 Sulakshana Tai Shilwant</strong> – Information compiled from party-info/en.
+                        </p>
+
+                        <p class="footer-message">
+                            We will fight for the rights of ordinary people and their overall development.
+                            <strong>We will win!</strong> Thank you.
+                        </p>
+                    </div>
+
+                    <!-- RIGHT SIDE CONTENT -->
+                    <div class="footer-right">
+                        <p class="footer-dev">
+                            <strong>Designed & Developed by Yashaswi Enterprises, Pune.</strong><br>
+                            For Business enquiry <strong>Call Us</strong>.
+                        </p>
+
+                        <div class="footer-social">
+                            <a href="#"><img src="../assets/Images/facebook.avif" alt="Facebook"
+                                    class="custom-footer-icon"></a>
+                            <a href="#"><img src="../assets/Images/youtube.avif" alt="YouTube"
+                                    class="custom-footer-icon"></a>
+                            <a href="#"><img src="../assets/Images/instgram.webp" alt="Instagram"
+                                    class="custom-footer-icon"></a>
+                            <a href="#"><img src="../assets/Images/twitter.png" alt="Twitter"
+                                    class="custom-footer-icon"></a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>

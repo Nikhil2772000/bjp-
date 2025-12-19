@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Vision - Sulakshana Tai Shilwant</title>
+
+
+<style>
+/* ---------------------------
+   GLOBAL STYLE
+---------------------------- */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #f2f6fc;
+}
+
+/* ---------------------------
+   CONTAINER
+---------------------------- */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------
+   HEADING
+---------------------------- */
+#visionHeading {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #0056b3;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* ---------------------------
+   TOGGLE BUTTON
+---------------------------- */
+#langToggleBtn {
+    display: block;
+    margin: 0 auto 25px auto;
+    padding: 10px 22px;
+    font-size: 1rem;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+#langToggleBtn:hover {
+    background: #0056b3;
+}
+
+/* ---------------------------
+   ACCORDION
+---------------------------- */
+.vision-item {
+    border: 1px solid #d9e8ff;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8fbff;
+    transition: transform 0.3s ease;
+}
+
+.vision-item:hover {
+    transform: translateY(-3px);
+}
+
+.vision-header {
+    padding: 16px 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #eaf3ff;
+    color: #0056b3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vision-header.active {
+    background: #007bff;
+    color: white;
+}
+
+.arrow {
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+}
+
+.vision-header.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Content */
+.vision-content {
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    padding: 0 20px;
+    line-height: 1.6;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.vision-item.open .vision-content {
+    max-height: 500px;
+    padding: 15px 20px;
+}
+
+/* ---------------------------
+   RESPONSIVE
+---------------------------- */
+@media (max-width: 600px) {
+    #visionHeading {
+        font-size: 1.7rem;
+    }
+
+    .vision-header {
+        font-size: 1rem;
+        padding: 14px 16px;
+    }
+
+    .vision-content {
+        font-size: 0.95rem;
+    }
+
+    #langToggleBtn {
+        width: 100%;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <button id="langToggleBtn">Marathi</button>
+
+    <h1 id="visionHeading">My Vision</h1>
+
+    <div id="vision-list"></div>
+
+</div>
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const langBtn = document.getElementById("langToggleBtn");
+    const visionHeading = document.getElementById("visionHeading");
+    const visionList = document.getElementById("vision-list");
+
+    let isMarathi = false;
+
+    /* ---------------------------
+       ENGLISH & MARATHI DATA
+    ---------------------------- */
+    const englishData = [
+        { title: "1) Law and Order", content: "The Buldhana Assembly constituency is known as a sensitive constituency with the largest number of slums. Despite the establishment of an independent commissionerate in the city, the number of serious crimes such as murders, rapes, child abuse, thefts, frauds, chain snatching, illegal alcohol sales, widespread drug trafficking, gambling, extortion, ‘koyata’ gangs, and terrorising groups is increasing day by day. Therefore, my vision for Pimpri is to strengthen the police system, conduct police recruitment based on the population requirements, encourage the police force, and ensure a safe, corruption-free and fear-free environment for citizens by cracking down on every criminal."},
+        { title: "2) Health", content:"Strengthening healthcare services is a core priority of Buldhana BJP. Our focus is on improving access to quality medical facilities, strengthening primary health centers, upgrading government hospitals, and ensuring affordable healthcare for every citizen. Special emphasis is placed on maternal and child health, preventive care, health awareness programs, and timely medical support in rural and urban areas. Through efficient implementation of government health schemes and modern healthcare infrastructure, we aim to build a healthy, secure, and resilient Buldhana."},
+        { title: "3) Education & Sports", content: "Enhancing education, skill development, and youth sports is a key priority for Buldhana BJP. Our vision is to provide quality education, promote job-oriented skill training, and strengthen sports infrastructure to empower students and youth. By encouraging talent, discipline, and innovation, we aim to build a skilled, confident, and self-reliant young generation that contributes to the overall development of Buldhana and the nation." },
+        { title: "4) Employment & Industries", content: "Creating employment opportunities, supporting industries, and strengthening MSMEs is a key focus of BJP Buldhana. Our vision is to encourage industrial growth, promote entrepreneurship, and provide strong support to small and medium enterprises. By improving infrastructure, facilitating ease of doing business, and enabling access to finance and skill development, we aim to generate sustainable jobs, strengthen the local economy, and ensure inclusive growth across Buldhana district." },
+        { title: "5) Benefits of government schemes", content: "Ensuring that all government schemes reach the people effectively is a key commitment of BJP Buldhana. Our focus is on transparent implementation, last-mile delivery, and ensuring that the intended benefits reach every eligible citizen. By strengthening local administration, increasing public awareness, and leveraging digital platforms, we aim to maximize the impact of welfare schemes and improve the quality of life for farmers, workers, women, youth, and senior citizens across Buldhana." },
+        { title: "6) Women Empowerment", content: "Supporting women’s safety, education, and entrepreneurship is a top priority for BJP Buldhana. Our commitment is to create a secure environment for women, ensure equal access to quality education, and encourage women-led entrepreneurship. By strengthening safety measures, promoting skill development, facilitating access to financial support, and effectively implementing women-centric government schemes, we aim to empower women to become confident, independent, and active contributors to Buldhana’s social and economic development." },
+        { title: "7) Roads, Traffic & Transport", content: "Developing better roads, improving traffic management, and strengthening public transport systems are key priorities of BJP Buldhana. Our focus is on building safe and durable roads, ensuring smooth traffic flow, reducing congestion, and expanding reliable public transport facilities. By upgrading infrastructure, implementing smart traffic solutions, and improving connectivity between urban and rural areas, we aim to make daily travel safer, faster, and more convenient for the people of Buldhana." },
+        {title: "8) Justice and relief for society members", content:"Ensuring justice and timely relief for all members of society is a key priority of BJP Buldhana. Our commitment is to provide accessible grievance redressal, support for marginalized communities, and efficient implementation of welfare programs. By strengthening local administration, improving transparency, and proactively addressing citizens’ concerns, we aim to create a fair, accountable, and supportive environment where every resident of Buldhana can lead a secure and dignified life."},
+        {title: "9) Development", content:"It is the duty of the elected representatives to provide all basic amenities to the citizens of the Buldhana assembly constituency and to improve their standard of living. In the coming years, priority will be given to the all-round development of Pimpri. Taking possession of the centrally located H.A. company's land and consolidating government offices, creating an oxygen park in a strategic location for future needs, and constructing a grand central office for the Senior Citizens' Federation are some of the major initiatives. These ambitious projects symbolize my commitment to making Pimpri an ideal constituency for development and progress and setting an example for the country."}
+    ];
+
+    const marathiData = [
+        { title: "१) कायदा आणि सुव्यवस्था", content: "बुलढाणा विधानसभा मतदारसंघ हा सर्वाधिक झोपडपट्ट्या असलेला संवेदनशील मतदारसंघ म्हणून ओळखला जातो. शहरात स्वतंत्र पोलीस आयुक्तालय स्थापन होऊनही, खून, बलात्कार, बाल लैंगिक अत्याचार, चोऱ्या, फसवणूक, साखळी चोरी, अवैध दारू विक्री, मोठ्या प्रमाणावर अमली पदार्थांची तस्करी, जुगार, खंडणी, 'कोयता' गँग आणि दहशत पसरवणारे गट यांसारख्या गंभीर गुन्ह्यांची संख्या दिवसेंदिवस वाढत आहे. त्यामुळे, पिंपरीसाठी माझी संकल्पना आहे की, पोलीस यंत्रणा मजबूत करणे, लोकसंख्येच्या गरजेनुसार पोलीस भरती करणे, पोलीस दलाला प्रोत्साहन देणे आणि प्रत्येक गुन्हेगारावर कठोर कारवाई करून नागरिकांसाठी सुरक्षित, भ्रष्टाचारमुक्त आणि भयमुक्त वातावरण सुनिश्चित करणे." },
+        { title: "२) आरोग्य", content: "आरोग्य सेवा मजबूत करणे हे बुलढाणा भाजपचे प्रमुख प्राधान्य आहे. दर्जेदार वैद्यकीय सुविधांची उपलब्धता सुधारणे, प्राथमिक आरोग्य केंद्रे बळकट करणे, सरकारी रुग्णालयांचा दर्जा वाढवणे आणि प्रत्येक नागरिकाला परवडणारी आरोग्यसेवा सुनिश्चित करणे यावर आमचा भर आहे. माता आणि बाल आरोग्य, प्रतिबंधात्मक काळजी, आरोग्य जागरूकता कार्यक्रम आणि ग्रामीण व शहरी भागांमध्ये वेळेवर वैद्यकीय सहाय्य यावर विशेष लक्ष दिले जात आहे. सरकारी आरोग्य योजनांची कार्यक्षम अंमलबजावणी आणि आधुनिक आरोग्य पायाभूत सुविधांच्या माध्यमातून, आम्ही एक निरोगी, सुरक्षित आणि सक्षम बुलढाणा निर्माण करण्याचे ध्येय ठेवले आहे." },
+        { title: "३) शिक्षण व क्रीडा", content: "शिक्षण, कौशल्य विकास आणि युवा क्रीडा क्षेत्राला चालना देणे हे बुलढाणा भाजपचे प्रमुख प्राधान्य आहे. विद्यार्थ्यांना आणि युवकांना सक्षम करण्यासाठी दर्जेदार शिक्षण देणे, नोकरीभिमुख कौशल्य प्रशिक्षणाला प्रोत्साहन देणे आणि क्रीडा पायाभूत सुविधा मजबूत करणे हे आमचे ध्येय आहे. प्रतिभा, शिस्त आणि नाविन्याला प्रोत्साहन देऊन, बुलढाणा आणि देशाच्या सर्वांगीण विकासात योगदान देणारी एक कुशल, आत्मविश्वासी आणि आत्मनिर्भर युवा पिढी घडवण्याचे आमचे उद्दिष्ट आहे." },
+        { title: "४) रोजगार व उद्योग", content: "रोजगार संधी निर्माण करणे, उद्योगांना पाठिंबा देणे आणि सूक्ष्म, लघु व मध्यम उद्योगांना बळकट करणे हे भाजप बुलढाणाचे प्रमुख उद्दिष्ट आहे. औद्योगिक वाढीला चालना देणे, उद्योजकतेला प्रोत्साहन देणे आणि लहान व मध्यम उद्योगांना भक्कम पाठिंबा देणे ही आमची दूरदृष्टी आहे. पायाभूत सुविधांमध्ये सुधारणा करून, व्यवसाय सुलभतेला प्रोत्साहन देऊन आणि वित्तपुरवठा व कौशल्य विकासाची सोय उपलब्ध करून देऊन, आम्ही बुलढाणा जिल्ह्यात शाश्वत रोजगार निर्माण करणे, स्थानिक अर्थव्यवस्था मजबूत करणे आणि सर्वसमावेशक वाढ सुनिश्चित करण्याचे ध्येय ठेवले आहे." },
+        { title: "५) शासकीय योजनांचे फायदे",content:"सर्व सरकारी योजना लोकांपर्यंत प्रभावीपणे पोहोचतील याची खात्री करणे ही भाजप बुलढाणाची एक प्रमुख वचनबद्धता आहे. आमचा भर पारदर्शक अंमलबजावणी, शेवटच्या घटकापर्यंत वितरण आणि इच्छित लाभ प्रत्येक पात्र नागरिकापर्यंत पोहोचतील याची खात्री करण्यावर आहे. स्थानिक प्रशासन मजबूत करून, लोकांमध्ये जागरूकता वाढवून आणि डिजिटल प्लॅटफॉर्मचा वापर करून, आम्ही बुलढाणा जिल्ह्यातील शेतकरी, कामगार, महिला, तरुण आणि ज्येष्ठ नागरिकांच्या कल्याणाच्या योजनांचा प्रभाव वाढवण्याचे आणि त्यांच्या जीवनाची गुणवत्ता सुधारण्याचे ध्येय ठेवतो."},
+        { title: "६) महिला सक्षमीकरण", content: " महिलांची सुरक्षा, शिक्षण आणि उद्योजकतेला पाठिंबा देणे हे भाजप बुलढाणाचे सर्वोच्च प्राधान्य आहे. महिलांसाठी सुरक्षित वातावरण निर्माण करणे, दर्जेदार शिक्षणासाठी समान संधी सुनिश्चित करणे आणि महिलांच्या नेतृत्वाखालील उद्योजकतेला प्रोत्साहन देणे ही आमची वचनबद्धता आहे. सुरक्षा उपाय मजबूत करून, कौशल्य विकासाला चालना देऊन, आर्थिक मदतीची उपलब्धता सुलभ करून आणि महिला-केंद्रित सरकारी योजनांची प्रभावीपणे अंमलबजावणी करून, बुलढाणाच्या सामाजिक आणि आर्थिक विकासात महिलांना आत्मविश्वासपूर्ण, स्वतंत्र आणि सक्रिय योगदानकर्त्या बनवण्यासाठी सक्षम करणे हे आमचे ध्येय आहे." },
+        { title: "७) रस्ते, वाहतूक व सार्वजनिक वाहतूक व्यवस्था", content: "उत्तम रस्ते विकसित करणे, वाहतूक व्यवस्थापनात सुधारणा करणे आणि सार्वजनिक वाहतूक व्यवस्था मजबूत करणे ही भाजप बुलढाण्याची प्रमुख प्राथमिकता आहे. सुरक्षित आणि टिकाऊ रस्ते बांधणे, वाहतूक सुरळीत ठेवणे, वाहतूक कोंडी कमी करणे आणि विश्वसनीय सार्वजनिक वाहतूक सुविधांचा विस्तार करणे यावर आमचा भर आहे. पायाभूत सुविधांमध्ये सुधारणा करून, स्मार्ट वाहतूक उपायांची अंमलबजावणी करून आणि शहरी व ग्रामीण भागांमधील संपर्क व्यवस्था सुधारून, बुलढाणा जिल्ह्यातील लोकांसाठी दैनंदिन प्रवास अधिक सुरक्षित, वेगवान आणि सोयीस्कर बनवण्याचे आमचे ध्येय आहे." },
+        { title: "८) सोसायटीधारकांना न्याय व दिलासा", content: "समाजातील सर्व सदस्यांना न्याय आणि वेळेवर दिलासा मिळवून देणे हे भाजप बुलढाणाचे प्रमुख प्राधान्य आहे. सुलभ तक्रार निवारण, वंचित समुदायांना पाठिंबा आणि कल्याणकारी योजनांची कार्यक्षम अंमलबजावणी करणे ही आमची वचनबद्धता आहे. स्थानिक प्रशासन मजबूत करून, पारदर्शकता वाढवून आणि नागरिकांच्या समस्यांवर सक्रियपणे तोडगा काढून, बुलढाण्यातील प्रत्येक रहिवासी सुरक्षित आणि सन्मानाचे जीवन जगू शकेल, असे एक न्याय्य, जबाबदार आणि सहाय्यक वातावरण निर्माण करण्याचे आमचे ध्येय आहे." },
+        { title: "९)  विकास", content: "बुलढाणा विधानसभा मतदारसंघातील नागरिकांना सर्व मूलभूत सुविधा पुरवणे आणि त्यांचा राहणीमान दर्जा उंचावणे हे निवडून आलेल्या प्रतिनिधींचे कर्तव्य आहे. येत्या काही वर्षांत पिंपरीच्या सर्वांगीण विकासाला प्राधान्य दिले जाईल. केंद्रस्थानी असलेल्या एच.ए. कंपनीचा भूखंड ताब्यात घेऊन सरकारी कार्यालयांचे एकत्रीकरण करणे, भविष्यातील गरजांसाठी मोक्याच्या ठिकाणी ऑक्सिजन पार्कची निर्मिती करणे आणि ज्येष्ठ नागरिक महासंघासाठी भव्य मध्यवर्ती कार्यालय बांधणे, हे काही प्रमुख उपक्रम आहेत. हे महत्त्वाकांक्षी प्रकल्प पिंपरीला विकास आणि प्रगतीसाठी एक आदर्श मतदारसंघ बनवण्याच्या आणि देशासमोर एक उदाहरण सादर करण्याच्या माझ्या वचनबद्धतेचे प्रतीक आहेत."}
+    ];
+
+    /* ---------------------------
+       Render Accordion Items
+    ---------------------------- */
+    function renderVision(data) {
+        visionList.innerHTML = "";
+
+        data.forEach(item => {
+            const box = document.createElement("div");
+            box.className = "vision-item";
+
+            const header = document.createElement("div");
+            header.className = "vision-header";
+            header.innerHTML = `${item.title} <span class="arrow">&#9660;</span>`;
+
+            const content = document.createElement("div");
+            content.className = "vision-content";
+            content.innerHTML = `<p>${item.content}</p>`;
+
+            box.appendChild(header);
+            box.appendChild(content);
+            visionList.appendChild(box);
+        });
+
+        attachAccordion();
+    }
+
+    /* ---------------------------
+       Accordion Function
+    ---------------------------- */
+    function attachAccordion() {
+        const headers = document.querySelectorAll(".vision-header");
+
+        headers.forEach(header => {
+            header.addEventListener("click", () => {
+                const parent = header.parentElement;
+                const content = parent.querySelector(".vision-content");
+
+                document.querySelectorAll(".vision-item").forEach(item => {
+                    if (item !== parent) {
+                        item.classList.remove("open");
+                        item.querySelector(".vision-content").style.maxHeight = null;
+                        item.querySelector(".vision-header").classList.remove("active");
+                    }
+                });
+
+                if (parent.classList.contains("open")) {
+                    parent.classList.remove("open");
+                    header.classList.remove("active");
+                    content.style.maxHeight = null;
+                } else {
+                    parent.classList.add("open");
+                    header.classList.add("active");
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    }
+
+    /* ---------------------------
+       LANGUAGE TOGGLE
+    ---------------------------- */
+    langBtn.addEventListener("click", () => {
+        if (!isMarathi) {
+            isMarathi = true;
+            langBtn.innerText = "English";
+            visionHeading.innerText = "माझे व्हिजन";
+            renderVision(marathiData);
+        } else {
+            isMarathi = false;
+            langBtn.innerText = "Marathi";
+            visionHeading.innerText = "My Vision";
+            renderVision(englishData);
+        }
+    });
+
+    // Initial Load
+    renderVision(englishData);
+});
+
+</script>
+
+
+
+
+
+
+    
+
+
+
+
+</html>
+
+    

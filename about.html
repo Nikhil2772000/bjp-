@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sulakshana Tai Shilwant</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ========================================
+   GLOBAL COLORS & BODY BACKGROUND
+========================================= */
+        :root {
+            --primary: #0d6efd;
+            --dark: #1a1a1a;
+            --text-dark: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #bbdefb, #64b5f6, #42a5f5);
+            background-size: 400% 400%;
+            animation: gradientBg 10s ease infinite, fadeInBody 1.5s ease-in-out;
+        }
+
+        /* Animated Gradient Background */
+        @keyframes gradientBg {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Fade Body Load */
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ========================================
+   HEADER
+========================================= */
+        .page-header {
+            background: var(--primary);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        /* ========================================
+   IMAGE ANIMATION
+========================================= */
+        .zoom-img {
+            transition: all 0.4s ease;
+            animation: fadeInScale 1.2s ease;
+        }
+
+        .zoom-img:hover {
+            transform: scale(1.07);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fade Scale Animation */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Fade Up Sections */
+        .fadeBox {
+            opacity: 0;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+   CTA BUTTON (CENTER)
+========================================= */
+        .vision-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 14px 35px;
+            font-size: 18px;
+            border-radius: 8px;
+            animation: fadeInScale 1.3s ease;
+        }
+
+        /* ========================================
+   FOOTER
+========================================= */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 25px 0;
+        }
+
+        .footer-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left img {
+            width: 35px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+
+        .footer-left img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 16px;
+        }
+
+        /* ========================================
+   RESPONSIVE FOOTER (MOBILE)
+========================================= */
+        @media(max-width: 768px) {
+            .footer-area {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-left {
+                margin-bottom: 10px;
+            }
+
+            .footer-left img {
+                width: 32px;
+                margin: 0 10px;
+            }
+
+            .footer-right {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .vision-btn {
+                width: 90%;
+                font-size: 16px;
+            }
+
+            .zoom-img {
+                max-width: 90%;
+            }
+        }
+
+        /* Extra small mobile (0–480px) */
+        @media(max-width: 480px) {
+            .page-header {
+                padding: 15px 0;
+                font-size: 18px;
+            }
+
+            .vision-btn {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+
+            footer {
+                padding: 20px 0;
+            }
+        }
+
+        
+/* ============================================================
+   HEADER + NAVBAR
+============================================================ */
+.main-header {
+    background: #ffffffee;
+    backdrop-filter: blur(6px);
+    padding: 10px 20px;
+    border-bottom: 3px solid #007bff;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* LOGO */
+.logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CANDIDATE NAME */
+.candidate-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* ================= NAV LINKS ================= */
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 600;
+    padding: 10px 18px !important;
+    transition: .25s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* ================= BUTTONS ================= */
+.nav-btn {
+    background-color: #0056b3;
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: .25s;
+}
+
+.nav-btn:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+}
+
+/* Marathi Button */
+.marathi-btn {
+    background-color: #d9534f;
+}
+
+.marathi-btn:hover {
+    background-color: #b44440;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-links img {
+    width: 28px;
+    transition: .3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.15);
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE STYLES
+============================================================ */
+@media (max-width: 991px) {
+
+    /* Hide long name on mobile */
+    .candidate-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    /* Mobile nav background */
+    #navbarNav {
+        background: #fff;
+        padding-bottom: 15px;
+        border-top: 2px solid #007bff;
+        margin-top: 10px;
+    }
+
+    /* Mobile nav links spacing */
+    .nav-link {
+        padding: 12px 0 !important;
+        font-size: 16px;
+    }
+
+    /* Mobile buttons full width */
+    .nav-btn {
+        width: 90%;
+        margin: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Center social icons */
+    .social-links {
+        justify-content: center !important;
+        margin-top: 10px;
+    }
+}
+    </style>
+
+<body>
+
+     <!-- ================= HEADER ================= -->
+    <header class="main-header navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            <!-- LEFT: LOGO + NAME -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="../assets/Images/logo.png" alt="Logo" class="logo-img me-2">
+                <h1 class="candidate-name mb-0 d-none d-lg-block">Dr. Sulakshana Shilwant - Dhar</h1>
+            </a>
+
+            <!-- MOBILE TOGGLER (RIGHT SIDE) -->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <!-- NAV MENU -->
+        <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start">
+
+                <li class="nav-item"><a id="navHome" class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a id="navAbout" class="nav-link" href="about.html">About Me</a></li>
+                <li class="nav-item"><a id="navParty" class="nav-link" href="party.html">Party Info</a></li>
+                <li class="nav-item"><a id="navContact" class="nav-link" href="contact.html">Contact Us</a></li>
+
+                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                    <a href="vision.html" id="visionBtn" class="btn nav-btn w-100">My Vision</a>
+                </li>
+
+                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                    <button id="langToggleBtn" class="btn nav-btn marathi-btn w-100">Marathi</button>
+                </li>
+
+                <!-- SOCIAL ICONS -->
+                <li class="social-links nav-item ms-lg-3 d-flex justify-content-center align-items-center mt-2 mt-lg-0">
+                    <a href="#" class="me-2"><img src="../assets/Images/facebook.avif" alt="Facebook"></a>
+                    <a href="#" class="me-2"><img src="../assets/Images/instgram.webp" alt="Instagram"></a>
+                    <a href="#" class="me-2"><img src="../assets/Images/youtube.avif" alt="YouTube"></a>
+                    <a href="#"><img src="../assets/Images/twitter.png" alt="Twitter/X"></a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HEADER -->
+    <header class="page-header animate__animated animate__fadeInDown">
+        <h1 class="fw-bold">About </h1>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container my-5">
+
+        <!-- SECTION 1 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7 order-md-2">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>As you know, Maharashtra Vidhan-sabha elections are just around the corner and like always
+                            there are many names doing the rounds as a potential candidate to represent our
+                            constituency. I am humbled as well as excited to be considered as one of the potential
+                            candidates, based on the feedback received from people. Hence I feel it's my moral
+                            responsibility to share some more details about myself with all of you to know me better.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 order-md-1 text-center">
+                <img src="../assets/Images/photo 1.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Sulakshana Tai">
+            </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>As usual like any other women I too having two names; my maiden name being Ms. Sulakshana
+                            Ashok Shilwant and after marriage I am known as Mrs Sulakshana Raju Dhar. Having said that I
+                            am a daughter, a sister, a wife, a mother and with your blessings presently also I am
+                            corporator of ward No 20. I was born in my hometown 'Thomse' a small rural Village in Patan
+                            Taluka of Satara District where I completed my primary education. Owing to my father's
+                            official transfer I completed my secondary education from a municipal school in Pimpri and
+                            Junior college from S.N.D.T women's college in Pune. I finally completed my Graduation
+                            (B.com) from the renowned Symbiosis College in Pune. Along with that, I also received a
+                            Doctorate of Social Science from The American University, USA in 2021. I have experienced a
+                            very diversified group of friends and colleagues from across religion, color, caste and
+                            financial status. Looking back today I feel this massive transition and exposure has helped
+                            meto understand the difficulties and requirements of both rural as well as urban citizens
+                            better.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <img src="../assets/Images/photo 2.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Childhood Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7 order-md-2">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>My inclination towards Social Services and Politics has been inherited from my family. My
+                            great grandfather was an active participant in the Patri Sarkarof the Kranti Singh Nana
+                            Patil. My grandfather was a school teacher in Satara Zilla Parishad School. My grandmother
+                            was not just a homemaker but she has also served as Sarpanch of our Village for 5-year term
+                            winning the election unopposed. My uncle is a Director of Patan Taluka Sarkari milk Union
+                            from past 25 years, my mother is a successful homemaker and two brothers are successfully
+                            handling their own business. I had an inter-caste marriage with a Kashmiri Pandit Mr Raju
+                            Dhar with blessings of our families. My husband is running a successful Pharmaceuticals
+                            business of his own.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center order-md-1">
+                <img src="../assets/Images/photo 3.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Family Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>My late father, Dr. Ashok Shilwant, was employed in a government job. Through the Ashok
+                            Sarvangeen Vikas Society, he worked for 31 years in various fields such as social work,
+                            education, culture, literature, art, and cooperation. Due to this, he was known not only
+                            throughout Maharashtra but also in India as true disciple and follower of 'Samrat Ashoka'.
+                            To elevate the economic status of the underprivileged in society, he established the Ashok
+                            Nagari Cooperative Bank. I have been managing the responsibilities at this bank, starting
+                            from the position of Junior Clerk to now serving as the Chief Manager. The inspiration for
+                            social work that I received from my father, along with my experience in the cooperative
+                            sector, has enabled me to directly connect with the public and helped me to build a strong
+                            bond with them.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <img src="../assets/Images/photo 4.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="reward Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7 order-md-2">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>Due to the Indian constitution laid down by Dr. Babasaheb Ambedkar it was possible to have
+                            reservation for backward class community in elections. Later with the initiative of Shri
+                            Sharadchandraji Pawar Saheb there was 50% reservation for women in local body elections. As
+                            a result of this I was given an opportunity to contest for Corporation election in PCMC at
+                            Sant Tukaram Nagar division 20, and with the support, guidance and blessings from all of you
+                            I was elected with huge vote margins in my first attempt in year 2017. Since the beginning I
+                            have been working day-night in Municipal Corporation as a representative of ward 20 from the
+                            past seven years. I have got the opportunity to work at various platforms in the Municipal
+                            Corporation like 'Women & Child Welfare Committee, Law Committee, Education Committee, and
+                            City Improvement Committee. Even though I am a part of opposition party in the local body I
+                            consider it's my duty to work hard, bring fresh ideas and solutions to make strategic
+                            decision without opposition from the government to up lift our society and fulfil basic
+                            needs of mankind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center order-md-1">
+                <img src="../assets/Images/photo 5.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Family Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>With everyone's blessings, in 2019, I was announced as the candidate for the Pimpri Assembly
+                            constituency by the Nationalist Congress Party. However, due to some unexpected local
+                            political circumstances, I missed that opportunity. Despite this, I did not lose heart. I
+                            remained loyal and faithfully worked for the candidates chosen by the party, following the
+                            orders given by the party. Those candidates were also elected. A year ago, after the party
+                            split, I was the only councillor who remained true to my beliefs, principles, and the will
+                            of my beloved voters, and I steadfastly remained loyal to the esteemed Sharad Pawar Saheb.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <img src="../assets/Images/photo6.jpeg" class="img-fluid rounded shadow-lg zoom-img" alt="reward Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>Over the past seven years, I have experienced many ups and downs. I lost my beloved son, who
+                            was a divine gift of motherhood to me. My father, who shaped me inside and out, left us.
+                            Recently, my father-in-law, who cared for me like a father, also passed away. I was able to
+                            recover and support my family through these numerous challenges because all of you truly
+                            became my support and gave strength to me and my family.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <img src="../assets/Images/photo 7.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Childhood Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7 order-md-2">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>'Your life should not just be like waves that crash against the shore and then retreat. You
+                            need to have the strength and patience like the ocean, which faces hundreds of storms at
+                            once and emerges victorious!'</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center order-md-1">
+                <img src="../assets/Images/photo 8.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Family Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>In my childhood along with my friends I was an active Sangh Shakha member, I was involved in
+                            NSS camps in my college and actively participated in every task. I have attended Vipassana
+                            (meditation) as well, so as to discipline my body and mind, I believe it has become my way
+                            of living life now.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <img src="../assets/Images/photo 9.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Childhood Photo">
+            </div>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="bio-section row align-items-center mb-5 fadeBox">
+            <div class="col-md-7 order-md-2">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p>I feel it's very crucial for every citizen to know in-depth details about their local
+                            candidates like their personal, educational and skills related background; to choose among
+                            the various alternatives available. Hence instead of putting a hoarding, roadside banner
+                            feel communicating via this letter will be appropriate. This is my little effort to reach
+                            out to each and every one of you for...!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 text-center order-md-1">
+                <img src="../assets/Images/photo 10.jpeg" class="img-fluid rounded shadow-lg zoom-img"
+                    alt="Family Photo">
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- CTA BUTTON IN CENTER -->
+        <a href="vision.html">
+            <button class="btn btn-primary btn-lg vision-btn animate__animated animate__shakeX">
+                Click Here to View My Vision
+            </button>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+
+            <!-- LEFT ICONS -->
+            <div class="footer-left d-flex align-items-center">
+                <a href="https://www.facebook.com/SulakshanaShilwantDhar"><img
+                        src="https://img.icons8.com/fluency/48/facebook-new.png"></a>
+                <a href="https://www.instagram.com/dr_sulakshana_shilwant_dhar/#"><img
+                        src="https://img.icons8.com/fluency/48/instagram-new.png"></a>
+                <a href="https://www.youtube.com/@drsulakshanashilwantdhar"><img
+                        src="https://img.icons8.com/fluency/48/youtube-play.png"></a>
+                <a href="https://x.com/SulakshanaDhar"><img src="https://img.icons8.com/fluency/48/twitter.png"></a>
+            </div>
+
+            <!-- RIGHT TEXT -->
+            <div class="footer-right">
+                Designed & Developed by <strong>Yashaswi Enterprises</strong>, Pune
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
