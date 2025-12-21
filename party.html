@@ -4,572 +4,681 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharad Pawar Saheb's Contributions - NCP</title>
+    <link rel="icon" href="./assets/Images/logo.png" sizes="128x128" type="image/png">
+    <title>Party | Sarala Mandar Bahekar</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 
     <style>
-        /* ==========================================================
-   GLOBAL
-========================================================== */
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bjp-orange: #ff9933;
+            --text-dark: #1a1a1a;
+            --white: #ffffff;
+            --footer-bg: #212529;
+            --bjp-blue: #0d65bd;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* GLOBAL BODY */
         body {
-            font-family: "Inter", sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #c7dffe, #ffffff, #d9e7ff);
-            background-size: 300% 300%;
-            animation: gradientFlow 12s ease infinite;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: var(--bjp-blue);
+            color: var(--white);
+            overflow-x: hidden;
+            padding-top: 80px;
         }
 
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* ==========================================================
-   HEADER / NAVBAR
-========================================================== */
+        /* HEADER / NAVBAR */
         .main-header {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            border-bottom: 3px solid #007bff;
-            padding: 10px 20px;
-            animation: slideDown 0.8s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-40px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .logo-img {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .candidate-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .navbar-nav .nav-link {
-            color: #333;
-            font-weight: 600;
-            padding: 10px 18px !important;
-            transition: all 0.25s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #007bff;
-            transform: translateY(-2px);
-        }
-
-        .nav-btn {
-            background: #0056b3;
-            color: #fff !important;
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-size: 15px;
-            transition: all 0.25s ease;
-        }
-
-        .nav-btn:hover {
-            background: #004494;
-            transform: translateY(-2px);
-        }
-
-        .marathi-btn {
-            background: #d9534f;
-        }
-
-        .marathi-btn:hover {
-            background: #b44440;
-        }
-
-        .social-links img {
-            width: 28px;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links img:hover {
-            transform: scale(1.15);
-        }
-
-        /* ==========================================================
-   HERO SECTION
-========================================================== */
-        .hero-section {
-            position: relative;
-            height: 55vh;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-            animation: fadeHero 1.3s ease forwards;
-        }
-
-        @keyframes fadeHero {
-            from {
-                opacity: 0;
-                transform: scale(1.05);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .hero-section img {
+            transition: all 0.3s ease;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(65%);
-        }
-
-        .hero-text {
-            position: absolute;
-            inset: 0;
+            z-index: 999;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 15px;
-            color: #fff;
-            animation: textFade 1.5s ease forwards;
         }
 
-        @keyframes textFade {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* SCROLL SHADOW */
+        .navbar-scrolled {
+            background: var(--white) !important;
+            box-shadow: var(--shadow);
         }
 
-        .hero-text h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
-        }
-
-        /* ==========================================================
-   CONTENT
-========================================================== */
-        .custom-container {
-            background: #fff;
-            border-radius: 20px;
-            padding: 35px;
-            margin-top: 40px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-            animation: fadeSlideUp 1s ease forwards;
-        }
-
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h2 {
-            color: #005fcc;
-            font-weight: 700;
-            border-bottom: 3px solid #005fcc;
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-        }
-
-        p {
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        /* ==========================================================
-   FOOTER
-========================================================== */
-        .custom-footer {
-            margin-top: 40px;
-            padding: 25px 0;
-            background: #f9f9f9;
-            border-top: 2px solid #ddd;
-            font-size: 0.95rem;
-        }
-
-        .footer-container {
+        .navbar-nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 25px;
         }
 
-        /* LEFT */
-        .footer-left {
-            max-width: 65%;
+        /* Logo */
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            transition: 0.3s ease;
         }
 
-        .footer-title {
-            margin-bottom: 6px;
-        }
-
-        .footer-message {
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* RIGHT */
-        .footer-right {
-            text-align: right;
-        }
-
-        .footer-dev {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-
-        /* ICONS */
-        .footer-social {
+        /* Brand text */
+        .brand-text {
+            color: var(--white);
+            font-size: 1.1rem;
             display: flex;
-            justify-content: flex-end;
-            gap: 12px;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: 0.3s ease;
         }
 
-        .custom-footer-icon {
-            width: 28px;
-            transition: transform 0.25s ease;
+        /* Hover animation */
+        .brand-animate:hover .brand-logo {
+            transform: scale(1.1) rotate(-3deg);
         }
 
-        .custom-footer-icon:hover {
-            transform: scale(1.15);
+        .brand-animate:hover .brand-text {
+            color: #f51414;
         }
 
-        /* ==========================================================
-   SCROLL ANIMATIONS
-========================================================== */
-        .fadeBox,
-        .bio-section,
-        .content-container {
+        /* Initial animation */
+        .brand-animate {
+            animation: fadeSlideIn 1s ease forwards;
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
         }
 
-        .visible,
-        .in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ==========================================================
-   RESPONSIVE
-========================================================== */
-        @media (max-width: 991px) {
-
-            .candidate-name {
-                display: none;
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
             }
 
-            #navbarNav {
-                background: #fff;
-                margin-top: 10px;
-                padding: 15px;
-                border-radius: 12px;
-                border-top: 2px solid #007bff;
-            }
-
-            .nav-link {
-                padding: 12px 0 !important;
-                text-align: center;
-            }
-
-            .nav-btn {
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .social-links {
-                justify-content: center;
-                margin-top: 10px;
-            }
-
-            .hero-section {
-                height: 40vh;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         @media (max-width: 768px) {
 
-            .footer-container {
-                flex-direction: column;
+            /* Reduce logo size on mobile */
+            .brand-logo {
+                height: 40px;
+            }
+
+            /* Adjust text size */
+            .brand-text {
+                font-size: 0.95rem;
                 text-align: center;
+                line-height: 1.3;
             }
 
-            .footer-left,
-            .footer-right {
-                max-width: 100%;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-                margin-top: 10px;
+            /* Adjust animation intensity for small screens */
+            .brand-animate:hover .brand-logo {
+                transform: scale(1.05) rotate(-2deg);
             }
         }
 
-        @media (max-width: 576px) {
+        @media (min-width: 1200px) {
 
-            .hero-section {
-                height: 32vh;
+            .brand-logo {
+                height: 60px;
             }
 
-            .hero-text h1 {
-                font-size: 1.4rem;
-            }
-
-            .custom-container {
-                padding: 20px;
+            .brand-text {
+                font-size: 1.25rem;
             }
         }
 
 
-        /* ================= GLOBAL CSS RESET ================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Inter", Arial, sans-serif;
+
+
+
+        .nav-gap>li {
+            margin: 0 4px;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* ================= CONTACT BANNER SECTION ================ */
-        .contact-banner {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            background: url("../assets/Images/contact\ us.jpg") center/cover no-repeat;
-        }
-
-        .banner-overlay {
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* NAV LINKS — DESKTOP STYLE */
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+            padding: 8px 15px;
+            margin: 0 5px;
             text-align: center;
+            display: block;
         }
 
-        .banner-content h1 {
-            font-size: 48px;
-            color: white;
-            letter-spacing: 2px;
-            font-weight: 700;
+        .nav-link:hover {
+            color: var(--bjp-orange) !important;
         }
 
-        .banner-content p {
-            font-size: 18px;
-            color: white;
-            margin-top: 10px;
+        /* LANGUAGE BUTTON */
+        #lang-btn {
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid var(--bjp-orange);
+            color: var(--bjp-orange);
+            background: transparent;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
         }
 
-        /* ================= CONTACT WRAPPER ================ */
-        .contact-form-section {
-            padding: 60px 0;
-            background: #f8f9fa;
+        #lang-btn:hover {
+            background: var(--bjp-orange);
+            color: var(--white);
         }
 
-        .contact-wrapper {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
+        /* ORANGE BUTTON */
+        .btn-orange {
+            background: var(--bjp-orange);
+            color: var(--white) !important;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 10px 20px;
+            border: none;
         }
 
-        /* ================= LEFT SECTION ================ */
-        .contact-left {
-            flex: 1;
+        /* MARATHI TEXT */
+        .lang-mr {
+            display: none;
         }
 
-        .left-title {
-            font-size: 32px;
-            color: #222;
-            margin-bottom: 10px;
+        /* ===================== PARTY SECTION ===================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .left-desc {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        /* INFO BOX */
-        .contact-info-box {
+        /* Party boxes */
+        .party-box {
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-            transition: .3s ease;
+            gap: 30px;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeSlideIn 1s ease forwards;
+            transition: transform 0.3s;
         }
 
-        .contact-info-box:hover {
-            transform: translateX(5px);
+        .party-box:hover {
+            transform: translateY(-5px);
         }
 
-        .contact-info-box i {
-            font-size: 22px;
-            color: #ff6600;
+        /* Alternate layout for even boxes */
+        .party-box:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .contact-info-box h4 {
-            margin-bottom: 4px;
-            font-size: 18px;
+        /* Image in party box */
+        .party-image {
+            width: 50%;
+            border-radius: 15px;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .contact-info-box p {
-            color: #666;
+        .party-box:hover .party-image {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        /* ================= RIGHT SECTION FORM ================ */
-        .contact-right {
-            flex: 1.3;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .form-box {
-            width: 100%;
-        }
-
-        /* INPUT ROW */
-        .row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .row input {
+        /* Text in party box */
+        .party-text {
             width: 50%;
         }
 
-        /* INPUT + SELECT + TEXTAREA STYLE */
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 14px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            outline: none;
-            font-size: 15px;
-            background: #fff;
-            transition: .3s;
+        .party-text h3 {
+            color: var(--bjp-orange);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #ff6600;
+        .party-text p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #333;
         }
 
-        /* BUTTON */
-        button {
-            width: 100%;
-            padding: 15px;
-            margin-top: 10px;
-            background: #ff6600;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            letter-spacing: 1px;
-            transition: .3s;
-        }
-
-        button:hover {
-            background: #ff4500;
-        }
-
-        /* ================= RESPONSIVE DESIGN (MOBILE) ================ */
-        @media (max-width: 900px) {
-            .contact-wrapper {
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 991px) {
+            .party-box {
                 flex-direction: column;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .banner-content h1 {
-                font-size: 32px;
+                text-align: center;
             }
 
-            .contact-right {
-                padding: 25px;
-            }
-
-            .row {
-                flex-direction: column;
-            }
-
-            .row input {
+            .party-image,
+            .party-text {
                 width: 100%;
             }
+
+            .party-text h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .party-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .party-text p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--footer-bg);
+            color: #bbb;
+            padding: 50px 0;
+        }
+
+        .footer-link {
+            color: #bbb;
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-link:hover {
+            color: var(--bjp-orange);
+            padding-left: 5px;
+        }
+
+        .text-orange {
+            color: var(--bjp-orange) !important;
+        }
+
+        /* ===================== MOBILE RESPONSIVE NAV ===================== */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                width: 100%;
+                justify-content: flex-end;
+                align-items: flex-end;
+                text-align: right;
+                gap: 10px;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-nav .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-collapse {
+                background: var(--white);
+                padding: 25px 20px;
+                border-radius: 12px;
+                margin-top: 12px;
+                box-shadow: var(--shadow);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-end;
+            }
+
+            /* Toggle Icon Right */
+            .navbar-toggler {
+                margin-left: auto;
+                border: none;
+                outline: none;
+                box-shadow: none !important;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* Dropdown Menu – Right Align */
+            .dropdown-menu {
+                text-align: right;
+                border: none;
+                background: #f8f9fa;
+                width: 100%;
+                padding: 15px 0;
+            }
+
+            .dropdown-item {
+                width: 100%;
+                text-align: right;
+                padding: 10px 20px;
+                font-size: 1.05rem;
+                color: var(--text-dark) !important;
+            }
+
+            .dropdown-item:hover {
+                background: var(--bjp-orange);
+                color: white !important;
+            }
+
+            /* Swap order on mobile */
+            .mobile-order-swap {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        /* SMALL MOBILE FIX */
+        @media (max-width: 480px) {
+            .brand-logo {
+                height: 40px;
+            }
+
+            #lang-btn {
+                padding: 5px 10px;
+            }
+        }
+
+        :root {
+            --bjp-orange: #ff9933;
+            --text-dark: #1a1a1a;
+            --white: #ffffff;
+            --footer-bg: #212529;
+            --bjp-blue: #0d65bd;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bjp-blue);
+            color: var(--white);
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* HEADER / NAVBAR */
+        .main-header {
+            transition: all 0.3s ease;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-scrolled {
+            background: var(--white) !important;
+            box-shadow: var(--shadow);
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            transition: 0.3s ease;
+        }
+
+        .brand-text {
+            color: var(--white);
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: 0.3s ease;
+        }
+
+        .brand-animate:hover .brand-logo {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .brand-animate:hover .brand-text {
+            color: #f51414;
+        }
+
+        .brand-animate {
+            animation: fadeSlideIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-gap>li {
+            margin: 0 4px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+            padding: 8px 15px;
+            margin: 0 5px;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-link:hover {
+            color: var(--bjp-orange) !important;
+        }
+
+        #lang-btn {
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid var(--bjp-orange);
+            color: var(--bjp-orange);
+            background: transparent;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        #lang-btn:hover {
+            background: var(--bjp-orange);
+            color: var(--white);
+        }
+
+        .btn-orange {
+            background: var(--bjp-orange);
+            color: var(--white) !important;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 10px 20px;
+            border: none;
+        }
+
+        .lang-mr {
+            display: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .party-box {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            opacity: 0;
+            transition: transform 0.3s;
+        }
+
+        .party-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .party-box:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .party-image {
+            width: 50%;
+            border-radius: 15px;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .party-box:hover .party-image {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .party-text {
+            width: 50%;
+        }
+
+        .party-text h3 {
+            color: var(--bjp-orange);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .party-text p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        @media (max-width: 991px) {
+            .party-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .party-image,
+            .party-text {
+                width: 100%;
+            }
+
+            .party-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .navbar-nav {
+                width: 100%;
+                justify-content: flex-end;
+                align-items: flex-end;
+                text-align: right;
+                gap: 10px;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-nav .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-collapse {
+                background: var(--white);
+                padding: 25px 20px;
+                border-radius: 12px;
+                margin-top: 12px;
+                box-shadow: var(--shadow);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-end;
+            }
+
+            .navbar-toggler {
+                margin-left: auto;
+                border: none;
+                outline: none;
+                box-shadow: none !important;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .dropdown-menu {
+                text-align: right;
+                border: none;
+                background: #f8f9fa;
+                width: 100%;
+                padding: 15px 0;
+            }
+
+            .dropdown-item {
+                width: 100%;
+                text-align: right;
+                padding: 10px 20px;
+                font-size: 1.05rem;
+                color: var(--text-dark) !important;
+            }
+
+            .dropdown-item:hover {
+                background: var(--bjp-orange);
+                color: white !important;
+            }
+
+            .mobile-order-swap {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .party-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .party-text p {
+                font-size: 0.95rem;
+            }
+
+            .brand-logo {
+                height: 40px;
+            }
+
+            #lang-btn {
+                padding: 5px 10px;
+            }
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: #bbb;
+            padding: 50px 0;
+        }
+
+        .footer-link {
+            color: #bbb;
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-link:hover {
+            color: var(--bjp-orange);
+            padding-left: 5px;
+        }
+
+        .text-orange {
+            color: var(--bjp-orange) !important;
         }
     </style>
 
@@ -578,461 +687,233 @@
 <body>
 
 
-    <!-- ================= HEADER ================= -->
-    <header class="main-header navbar navbar-expand-lg shadow-sm">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+    <header class="main-header navbar navbar-expand-lg fixed-top">
+        <div class="container">
 
-            <!-- LEFT: LOGO + NAME -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="../assets/Images/logo.png" alt="Logo" class="logo-img me-2">
-                <h1 class="candidate-name mb-0 d-none d-lg-block">Dr. Sulakshana Shilwant - Dhar</h1>
+            <!-- BRAND -->
+            <a class="navbar-brand d-flex align-items-center brand-animate" href="index.html">
+                <img src="./assets/Images/logo.png" alt="Logo" class="brand-logo" />
+                <span class="ms-2 fw-bold brand-text">
+                    <span class="lang-en">Sarala Mandar Bahekar</span>
+                    <span class="lang-mr">सरला मंदार बाहेकर</span>
+                </span>
             </a>
 
-            <!-- MOBILE TOGGLER (RIGHT SIDE) -->
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><span class="lang-en">Home</span><span
+                                class="lang-mr">मुख्यपृष्ठ</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html"><span
+                                class="lang-en">About</span><span class="lang-mr">माझ्याबद्दल</span></a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <span class="lang-en">More</span><span class="lang-mr">अधिक</span>
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="party.html"><span class="lang-en">Party Info</span><span
+                                        class="lang-mr">पक्ष माहिती</span></a></li>
+                            <li><a class="dropdown-item" href="vision.html"><span class="lang-en">My Vision</span><span
+                                        class="lang-mr">माझा दृष्टिकोन</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><button id="lang-btn" onclick="toggleLanguage()">मराठी</button></li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="btn btn-orange">
+                            <span class="lang-en">Contact Us</span><span class="lang-mr">संपर्क करा</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <!-- NAV MENU -->
-        <nav class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start">
-
-                <li class="nav-item"><a id="navHome" class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a id="navAbout" class="nav-link" href="about.html">About Me</a></li>
-                <li class="nav-item"><a id="navParty" class="nav-link" href="party.html">Party Info</a></li>
-                <li class="nav-item"><a id="navContact" class="nav-link" href="contact.html">Contact Us</a></li>
-
-                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-                    <a href="vision.html" id="visionBtn" class="btn nav-btn w-100">My Vision</a>
-                </li>
-
-                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-                    <button id="langToggleBtn" class="btn nav-btn marathi-btn w-100">Marathi</button>
-                </li>
-
-                <!-- SOCIAL ICONS -->
-                <li class="social-links nav-item ms-lg-3 d-flex justify-content-center align-items-center mt-2 mt-lg-0">
-                    <a href="#" class="me-2"><img src="../assets/Images/facebook.avif" alt="Facebook"></a>
-                    <a href="#" class="me-2"><img src="../assets/Images/instgram.webp" alt="Instagram"></a>
-                    <a href="#" class="me-2"><img src="../assets/Images/youtube.avif" alt="YouTube"></a>
-                    <a href="#"><img src="../assets/Images/twitter.png" alt="Twitter/X"></a>
-                </li>
-
-            </ul>
-        </nav>
     </header>
 
 
-    <div class="container mb-4">
-        <div class="hero-section">
-            <img src="../assets/Images/congress party.jpeg" alt="Sharad Pawar Saheb and NCP Leaders Banner">
 
+    <h1 class="page-title text-center my-5">
+        <span class="lang-en">BJP – Buldhana District</span>
+        <span class="lang-mr">भा.ज.पा – बुलढाणा जिल्हा</span>
+    </h1>
 
-            <div class="hero-text text-center">
-                <h1 class="fw-bold">Victory of Tutari... Victory of Maharashtra's Self-Respect...!</h1>
+    <div class="container">
+
+        <!-- PARTY CARDS -->
+        <div class="party-box" data-aos="fade-up">
+            <img src="./assets/Images/party 3.webp" alt="BJP Buldhana" class="party-image">
+            <div class="party-text">
+                <h3><span class="lang-en">About BJP – Buldhana</span><span class="lang-mr">बुलढाणा – भाजपा विषयी</span>
+                </h3>
+                <p><span class="lang-en">The <span>Bharatiya Janata Party</span> in Buldhana is committed to
+                        strengthening public welfare, rural development, education, agriculture support, and modern
+                        infrastructure.</span><span class="lang-mr"><span>भारतीय जनता पार्टी</span> बुलढाण्यात
+                        लोककल्याण, ग्रामीण विकास, शिक्षण, कृषी समर्थन आणि आधुनिक पायाभूत सुविधा मजबूत करण्यासाठी कटिबद्ध
+                        आहे.</span></p>
+                <p><span class="lang-en">BJP leaders and volunteers continue working tirelessly to build a stronger
+                        future based on empowerment, growth, and unity.</span><span class="lang-mr">भाजपा नेते आणि
+                        स्वयंसेवक सशक्तीकरण, विकास आणि एकतेच्या आधारावर मजबूत भविष्य घडवण्यासाठी सातत्याने कार्यरत
+                        आहेत.</span></p>
             </div>
         </div>
+
+        <!-- CARD 1 -->
+        <div class="party-box" data-aos="fade-up" data-aos-delay="100">
+            <img src="./assets/Images/buldhan4.jfif" alt="BJP Social Welfare" class="party-image">
+            <div class="party-text">
+                <h3><span class="lang-en">Social Welfare Initiatives</span><span class="lang-mr">सामाजिक कल्याण
+                        उपक्रम</span></h3>
+                <p><span class="lang-en">BJP supports farmers, women, and tribal groups through social reform
+                        initiatives.</span><span class="lang-mr">भाजपा शेतकरी, महिला आणि आदिवासी गटांसाठी सामाजिक
+                        सुधारणा उपक्रम राबवत आहे.</span></p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="party-box" data-aos="fade-up" data-aos-delay="200">
+            <img src="./assets/Images/party4.jpg" alt="BJP Education" class="party-image">
+            <div class="party-text">
+                <h3><span class="lang-en">Education Development</span><span class="lang-mr">शिक्षण विकास</span></h3>
+                <p><span class="lang-en">Schools have been upgraded, digital classrooms introduced, and scholarship
+                        support expanded to uplift the youth of Buldhana.</span><span class="lang-mr">शाळा सुधारण्यात
+                        आल्या आहेत, डिजिटल वर्गखोली सुरु करण्यात आली आहे, आणि विद्यार्थ्यांसाठी शिष्यवृत्ती व मदत
+                        वाढवण्यात आली आहे.</span></p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="party-box" data-aos="fade-up" data-aos-delay="300">
+            <img src="./assets/Images/party 2.avif" alt="BJP Infrastructure" class="party-image">
+            <div class="party-text">
+                <h3><span class="lang-en">Infrastructure Growth</span><span class="lang-mr">पायाभूत सुविधा वाढ</span>
+                </h3>
+                <p><span class="lang-en">From roads to employment hubs, the region is witnessing major
+                        improvements.</span><span class="lang-mr">रस्ते, रोजगार हब्स यासह क्षेत्रात महत्त्वपूर्ण सुधारणा
+                        होत आहेत.</span></p>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="party-box" data-aos="fade-up" data-aos-delay="400">
+            <img src="./assets/Images/public bjp.avif" alt="BJP Public Service" class="party-image">
+            <div class="party-text">
+                <h3><span class="lang-en">Public Service Support</span><span class="lang-mr">सार्वजनिक सेवा
+                        समर्थन</span></h3>
+                <p><span class="lang-en">Medical outreach, student welfare, sanitation campaigns enhance citizens’
+                        well-being.</span><span class="lang-mr">वैद्यकीय शिबिरे, विद्यार्थ्यांसाठी उपक्रम, स्वच्छता
+                        मोहिमा नागरिकांच्या कल्याणासाठी सक्रियपणे राबवले जात आहेत.</span></p>
+            </div>
+        </div>
+
     </div>
 
-    <div class="container custom-container">
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-orange fw-bold mb-4">
+                        <span class="lang-en">Sarala Mandar Bahekar</span><span class="lang-mr">सरला मंदार
+                            बाहेकर</span>
+                    </h5>
+                    <p class="small">
+                        <span class="lang-en">Working for the holistic development of Buldhana district.</span>
+                        <span class="lang-mr">बुलढाणा जिल्ह्याच्या सर्वांगीण विकासासाठी कार्यरत.</span>
+                    </p>
+                    <div class="d-flex mt-3">
+                        <a href="https://www.instagram.com/mandar_bahekar/" class="text-orange me-3 fs-4"><i
+                                class="fab fa-instagram"></i></a>
 
-        <h3 class="text-center mb-4">A Legacy of Service — The Congress Party’s Guiding Philosophy</h3>
-
-        <p class="mt-3">
-            <strong>With warm regards,</strong><br>
-        </p>
-
-        <p class="text-muted fst-italic">
-            <strong>Respected Sharad Pawar Saheb</strong> has always placed the common people, the marginalized, the
-            economically
-            and socially disadvantaged, tribals, farmers, women, workers, and youth at the center of his politics.
-            Consequently,
-            during his extensive tenure as Chief Minister and as a Central Minister, he has made numerous decisions with
-            the
-            welfare of these groups in mind. Over a remarkable journey of 57 years in social and political arenas,
-            <strong>Sharad Pawar Saheb</strong> has faced many challenges. Yet, while preserving the legacy and ideals
-            of the
-            people's leader, the late Yashwantrao Chavan Saheb, he has continued to make significant contributions to
-            both the
-            country and Maharashtra, firmly believing that no struggle is too great when it comes to the welfare of the
-            people.
-        </p>
-
-        <p class="text-muted fst-italic">
-            Currently, political morality in the country has deteriorated due to certain specific elements. The ruling
-            government
-            has created disillusionment among ordinary citizens under the pretense of promoting development. Inflation
-            has risen
-            sharply, farmers who feed the nation are themselves starving, law and order concerns have intensified,
-            unemployment
-            continues to grow, and challenges in education and healthcare for the underprivileged are worsening.
-            Furthermore, in
-            the name of caste and religion, the ruling party is inciting the youth and creating divisions among
-            communities for
-            political gain.
-        </p>
-
-        <p class="text-muted fst-italic">
-            The government is misusing state machinery to suppress voices that oppose it, attempting to stifle
-            democratic dissent.
-            While the hardships of the underprivileged deepen, the ruling party remains callously preoccupied with
-            breaking
-            opposition parties and weakening social organizations. At such a time, it is essential for the people to
-            show the
-            rulers their rightful place. I firmly believe that in the coming period, this anti-Maharashtra government
-            will indeed
-            be shown its place by the self-respecting Tutaras of the Nationalist Congress Party and by the power of the
-            common
-            people.
-        </p>
-
-        <p class="text-muted fst-italic">
-            <strong>We will fight for the rights of ordinary people and for their overall development... We will win!
-                Thank you.</strong>
-        </p>
-
-
-
-
-
-
-        <hr>
-
-        <section class="mt-5">
-            <h2 class="text-center">Sharad Pawar Saheb's Notable Contributions to Pimpri-Chinchwad City</h2>
-
-            <p>
-                The city of Pimpri-Chinchwad emerged from the vision of the late Yashwantrao Chavan, late Dhananjayrao
-                Gadgil,
-                late Annasaheb Magar, and late Ramkrishna More. In the subsequent years, <strong>Sharad Pawar Saheb has
-                    played the
-                    most significant role in the city's development</strong>. His influence spans politics, social work,
-                trade, industry,
-                and labor.
-            </p>
-
-            <p>
-                Sharad Pawar Saheb’s name is prominent in every sector—politics, social work, trade, industry, and
-                labor. Every time
-                a new bridge, hospital, school, building, park, or swimming pool is inaugurated in the city,
-                Sharadchandra Pawar’s
-                name is invariably mentioned on the foundation and inauguration plaques.
-            </p>
-
-            <p>
-                The Nationalist Congress Party (NCP) is relatively recent. Before its formation, during the periods of
-                the
-                Socialist Congress and Congress parties, Pimpri-Chinchwad city and the surrounding villages received
-                strong support
-                from the revered Pawar Saheb—from village heads to every member of the gram panchayats.
-            </p>
-
-            <p>
-                Hundreds of respected names can be listed, such as late Madhukar Anna Pawle, late Fakirbhai Pansare,
-                late Sadaba
-                Kate, late Hiramman Barane, late Pandurang Kalate, late Bhiku Waghere Patil, late Vithoba Lande Patil,
-                late MLA
-                Lakshman Jagtap, late Rangnath Kudale, late Digambar Kalbhor, late Rangnath Fugge, late Sopanrao Bhoir,
-                and many
-                more. For all of them, the direction provided by Pawar Saheb was always considered the right path.
-            </p>
-
-            <p>
-                In 1989, a strike by Tata Motors workers severely affected the company's operations. The strike was
-                successfully
-                resolved by Sharad Pawar Saheb; otherwise, Tata was preparing to shut down operations here. In 1992–93,
-                <strong>188 acres of land</strong> were allocated for Tata’s expansion project (Mitsubishi-Benz),
-                attracting significant
-                investment and generating large-scale employment.
-            </p>
-
-            <p>
-                In 1994, Maharashtra was selected to host the National Games. Since Rajiv Gandhi had changed the format
-                to resemble
-                the Olympic Games in 1985, this was only the third national event. As Maharashtra's Chief Minister,
-                Sharad Pawar
-                Saheb ensured the successful organization of these sports competitions, setting a benchmark across the
-                country.
-                This led to the establishment of the <strong>Shiv Chhatrapati International Sports Complex</strong> in
-                Balewadi.
-            </p>
-
-            <p>
-                Sharad Pawar Saheb played a crucial role in the construction of the Bhakti Shakti Memorial in Nigdi,
-                commemorating
-                the historic meeting between Chhatrapati Shivaji Maharaj and Jagadguru Sant Tukaram Maharaj. Under the
-                leadership
-                of farmer leader Sharad Joshi, the farmers’ agitation was also resolved smoothly within four days,
-                thanks to Sharad
-                Pawar Saheb’s intervention.
-            </p>
-
-            <p>
-                The struggle of Bajaj Auto workers is a historic moment in the city’s labor movement. Its resolution was
-                made
-                possible through Pawar Saheb's leadership. The bond between industrialist Rahul Bajaj and Sharad Pawar
-                remains
-                strong to this day. For over twenty years, the Hindustan Antibiotics (HA) company has faced significant
-                challenges,
-                and regardless of which union represented the workers, Sharad Pawar Saheb consistently ensured central
-                government
-                support to address their issues.
-            </p>
-
-            <p>
-                Due to Sharad Pawar Saheb’s foresight, the <strong>Rajiv Gandhi IT Park</strong> was established in the
-                Hinjewadi area.
-                This transformative decision fueled the comprehensive development of Pimpri-Chinchwad and Pune
-                districts. Today,
-                the IT park provides employment to nearly <strong>five lakh youth</strong> and has greatly strengthened
-                the region’s economic
-                landscape.
-            </p>
-
-            <p>
-                Whether it was the <strong>JNNURM (Jawaharlal Nehru National Urban Renewal Mission)</strong> or the
-                Smart City initiative during
-                the UPA government, Sharad Pawar Saheb consistently ensured that Pimpri-Chinchwad received priority.
-                Initially, JNNURM
-                included only Pune city, but due to Pawar Saheb’s efforts, Pimpri-Chinchwad was added, resulting in a
-                development
-                allocation of <strong>₹3,500 crores</strong>.
-            </p>
-
-            <p>
-                In 2014, when Narendra Modi from the BJP became Prime Minister, only Pune was included in the Smart City
-                project.
-                However, Sharad Pawar Saheb ensured that Pimpri-Chinchwad was recognized as an independent city and
-                included in the
-                scheme, enabling it to benefit from numerous major and minor development projects. Today, development
-                across every
-                corner of the city reflects his lasting influence.
-            </p>
-
-            <p>
-                For patients coming from Pune district and across Maharashtra, Sharad Pawar Saheb played a key role in
-                establishing
-                the <strong>Yashwantrao Chavan Memorial (YCM) Hospital</strong> in Pimpri. Due to his contribution, YCM
-                Hospital has become a
-                leading healthcare institution offering excellent patient care.
-            </p>
-
-            <p>
-                Sharad Pawar Saheb has consistently focused on well-planned roads, infrastructure, education,
-                healthcare, and
-                employment in Pimpri-Chinchwad, laying the foundation for a true <strong>model Smart City</strong>.
-            </p>
-
-            <section class="mt-5">
-                <h2 class="text-center">
-                    Notable Contributions of Sharad Pawar Saheb to the Country and Maharashtra
-                </h2>
-                <ul>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who made provisions for 33% reservation for women in local
-                            self-government institutions</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who managed the situation systematically during the Killeari
-                            earthquake</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who opened the doors of the military for women by providing 11%
-                            reservation</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who named Marathwada University after Dr. Babasaheb Ambedkar</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who transformed Mumbai into a significant global center</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who restored Mumbai to its former glory amidst the crisis</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who took sports like Kabaddi and Wrestling to the international
-                            level</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who established the petrochemicals industry</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who achieved self-sufficiency in food grains</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who allocated a separate budget for tribal communities based on
-                            their population</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who revolutionized fruit orchard cultivation</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who established the Yashwantrao Chavan Open University</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who developed a network of Agricultural Science Centers</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who provided royal patronage to folk arts</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who has been a pillar of support for the World Marathi
-                            Conference</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who provided ₹72,000 crores in debt relief to farmers</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who elevated Pune to the global stage through the Rajiv Gandhi
-                            Hinjewadi IT Park</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who empowered and modernized the country's armed forces</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who empowered women in the informal sector for industry and
-                            business</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who worked in the educational field through the Rayat Education
-                            Society</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who provided rightful homes to municipal workers and
-                            representation to the working class</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who promoted research in the agricultural sector</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who established the National Disaster Response Force (NDRF)</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who laid the foundation for the Sant Peetha</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who was the first Chief Minister in the country to implement the
-                            Mandal Commission recommendations</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who enabled women to gain self-respect through education</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who ensured equal rights for both sons and daughters in paternal
-                            property</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who promoted agro-based industries</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who provided direction to the sugar industry through the
-                            Vasantdada Sugar Institute</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who provided compensation for excess sugarcane and gave relief
-                            to sugarcane growers</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who carried forward the thoughts and work of the late
-                            Yashwantrao Chavan through the Yashwantrao Chavan Foundation</p>
-                    </li>
-
-                    <li>
-                        <p><strong>Pawar Saheb</strong> who resolved disputes within cricket organizations and expanded
-                            playing fields</p>
-                    </li>
-
-                </ul>
-
-
-            </section>
-
-
-
-
-
-            <hr class="my-5">
-
-            <!-- ================= FOOTER ================= -->
-            <footer class="custom-footer">
-                <div class="container footer-container">
-
-                    <!-- LEFT SIDE CONTENT -->
-                    <div class="footer-left">
-                        <p class="footer-title">
-                            <strong>© 2025 Sulakshana Tai Shilwant</strong> – Information compiled from party-info/en.
-                        </p>
-
-                        <p class="footer-message">
-                            We will fight for the rights of ordinary people and their overall development.
-                            <strong>We will win!</strong> Thank you.
-                        </p>
                     </div>
-
-                    <!-- RIGHT SIDE CONTENT -->
-                    <div class="footer-right">
-                        <p class="footer-dev">
-                            <strong>Designed & Developed by Yashaswi Enterprises, Pune.</strong><br>
-                            For Business enquiry <strong>Call Us</strong>.
-                        </p>
-
-                        <div class="footer-social">
-                            <a href="#"><img src="../assets/Images/facebook.avif" alt="Facebook"
-                                    class="custom-footer-icon"></a>
-                            <a href="#"><img src="../assets/Images/youtube.avif" alt="YouTube"
-                                    class="custom-footer-icon"></a>
-                            <a href="#"><img src="../assets/Images/instgram.webp" alt="Instagram"
-                                    class="custom-footer-icon"></a>
-                            <a href="#"><img src="../assets/Images/twitter.png" alt="Twitter"
-                                    class="custom-footer-icon"></a>
-                        </div>
-                    </div>
-
                 </div>
-            </footer>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-4"><span class="lang-en">Links</span><span
+                            class="lang-mr">दुवे</span></h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="vision.html" class="footer-link">Vision</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4"><span class="lang-en">Location</span><span
+                            class="lang-mr">ठिकाण</span></h5>
+                    <p class="small"><i class="fas fa-map-marker-alt me-2 text-orange"></i> Buldhana,
+                        Maharashtra</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4"><span class="lang-en">Contact</span><span
+                            class="lang-mr">संपर्क</span></h5>
+                    <p class="small mb-1"><i class="fas fa-envelope me-2 text-orange"></i> info@saralabahekar.in
+                    </p>
+                    <p class="small"><i class="fas fa-phone me-2 text-orange"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5">
+            <p class="text-center small mb-0">&copy; <span id="currentYear"></span>
+                <span class="lang-en">Developed by Nikhil Joshi</span>
+                <span class="lang-mr">निखिल जोशी द्वारा विकसित</span>
+            </p>
+        </div>
+    </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
 
+        // Language Switcher Function
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const mrElements = document.querySelectorAll('.lang-mr');
+            const btn = document.getElementById('lang-btn');
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+            if (btn.innerText === "मराठी") {
+                // Switch to Marathi
+                enElements.forEach(el => el.style.display = 'none');
+                mrElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "English";
 
+                // Save preference
+                localStorage.setItem('lang', 'mr');
+            } else {
+                // Switch to English
+                enElements.forEach(el => el.style.display = 'inline-block');
+                mrElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "मराठी";
+
+                // Save preference
+                localStorage.setItem('lang', 'en');
+            }
+        }
+
+        // Apply saved language on page load
+        function applySavedLanguage() {
+            const savedLang = localStorage.getItem('lang') || 'en'; // default English
+            const enElements = document.querySelectorAll('.lang-en');
+            const mrElements = document.querySelectorAll('.lang-mr');
+            const btn = document.getElementById('lang-btn');
+
+            if (savedLang === 'mr') {
+                enElements.forEach(el => el.style.display = 'none');
+                mrElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "English";
+            } else {
+                enElements.forEach(el => el.style.display = 'inline-block');
+                mrElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "मराठी";
+            }
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', applySavedLanguage);
+
+    </script>
 </body>
 
 </html>

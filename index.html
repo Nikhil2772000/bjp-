@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/Images/logo.png" sizes="128x128" type="image/png">
+
     <title>Sarala Mandar Bahekar | BJP Buldhana</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,66 +18,68 @@
         rel="stylesheet">
 
     <style>
+        /* =========================================
+   ROOT COLORS & VARIABLES
+========================================= */
         :root {
             --bjp-orange: #ff9933;
-            --text-dark: #212529;
+            --text-dark: #1a1a1a;
             --white: #ffffff;
             --footer-bg: #212529;
+            --bjp-blue: #0d65bd;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* BODY */
+        /* =========================================
+   BODY
+========================================= */
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background: rgb(247, 168, 168);
+            background: var(--bjp-blue);
+            color: var(--white);
             overflow-x: hidden;
-            margin: 0;
+            padding-top: 80px;
         }
 
-        /* HEADER / NAVBAR */
+        /* =========================================
+   HEADER + NAVBAR
+========================================= */
         .main-header {
             transition: all 0.3s ease;
             padding: 10px 0;
-            background: rgba(255, 255, 255, 0.95);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 999;
             display: flex;
             align-items: center;
+            background: transparent;
         }
 
-        .navbar-nav {
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* SCROLL SHADOW */
+        /* Shadow on scroll */
         .navbar-scrolled {
             background: var(--white) !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
         }
 
-        /* BRAND LOGO */
+        /* Logo */
         .brand-logo {
             height: 50px;
             width: auto;
-            transition: transform 0.3s ease-in-out;
+            transition: 0.3s ease;
         }
 
-        /* BRAND TEXT */
+        /* Brand text */
         .brand-text {
-            color: #333;
+            color: var(--white);
             font-size: 1.1rem;
             display: flex;
             flex-direction: column;
             line-height: 1.2;
-            transition: color 0.3s ease-in-out;
+            transition: 0.3s ease;
         }
 
-        /* HOVER EFFECTS */
+        /* Hover animation */
         .brand-animate:hover .brand-logo {
             transform: scale(1.1) rotate(-3deg);
         }
@@ -82,7 +88,7 @@
             color: #f51414;
         }
 
-        /* FADE SLIDE ANIMATION */
+        /* Initial animation */
         .brand-animate {
             animation: fadeSlideIn 1s ease forwards;
             opacity: 0;
@@ -100,9 +106,42 @@
             }
         }
 
-        /**************************************
-   NAV LINKS — DESKTOP STYLE (CENTERED)
-**************************************/
+        /* =========================================
+   RESPONSIVE BRAND STYLE
+========================================= */
+        @media (max-width: 768px) {
+            .brand-logo {
+                height: 40px;
+            }
+
+            .brand-text {
+                font-size: 0.95rem;
+                text-align: center;
+                line-height: 1.3;
+            }
+
+            .brand-animate:hover .brand-logo {
+                transform: scale(1.05) rotate(-2deg);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .brand-logo {
+                height: 60px;
+            }
+
+            .brand-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* =========================================
+   NAVIGATION
+========================================= */
+        .nav-gap>li {
+            margin: 0 7px;
+        }
+
         .nav-link {
             font-weight: 500;
             color: #333 !important;
@@ -116,9 +155,7 @@
             color: var(--bjp-orange) !important;
         }
 
-        /**************************************
-   LANGUAGE BUTTON
-**************************************/
+        /* Language toggle button */
         #lang-btn {
             cursor: pointer;
             font-weight: bold;
@@ -132,93 +169,53 @@
 
         #lang-btn:hover {
             background: var(--bjp-orange);
-            color: white;
+            color: var(--white);
         }
 
-        /**************************************
-   ORANGE BUTTON
-**************************************/
+        /* Button general */
         .btn-orange {
             background: var(--bjp-orange);
-            color: white !important;
+            color: var(--white) !important;
             font-weight: 600;
             border-radius: 8px;
             padding: 10px 20px;
             border: none;
         }
 
-        /**************************************
-   MOBILE RESPONSIVE NAVBAR CENTER
-**************************************/
-        @media (max-width: 991px) {
-
-            /* Push toggle icon to right side */
-            .navbar-toggler {
-                margin-left: auto;
-                margin-right: 10px;
-                border: none;
-                outline: none;
-                box-shadow: none !important;
-            }
-
-            /* Toggle Icon size */
-            .navbar-toggler-icon {
-                width: 30px;
-                height: 30px;
-            }
-
-            /* Navbar links container — centered */
-            .navbar-collapse {
-                background: white;
-                padding: 25px 20px;
-                border-radius: 12px;
-                margin-top: 12px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            /* Mobile menu links — centered full width */
-            .nav-link {
-                width: 100%;
-                text-align: center;
-                padding: 14px 0;
-                font-size: 1.1rem;
-                border-bottom: 1px solid #eee;
-            }
-
-            /* Remove last border */
-            .navbar-nav .nav-item:last-child .nav-link {
-                border-bottom: none;
-            }
+        /* =========================================
+   DROPDOWN MENU
+========================================= */
+        .dropdown-menu {
+            text-align: center;
+            border: none;
+            background: #f8f9fa;
+            width: 100%;
+            padding: 15px 0;
         }
 
-        /**************************************
-   SMALL MOBILE TWEAKS
-**************************************/
-        @media (max-width: 480px) {
-            .brand-logo {
-                height: 40px;
-            }
-
-            #lang-btn {
-                padding: 5px 12px;
-            }
+        .dropdown-item {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.05rem;
+            color: var(--text-dark) !important;
         }
 
-        /* --- Slider --- */
+        .dropdown-item:hover {
+            background: var(--bjp-orange);
+            color: var(--white) !important;
+        }
+
+        /* =========================================
+   HERO SLIDER
+========================================= */
         .slider-section {
             margin-top: 70px;
         }
 
-        /* Space for fixed header */
-
         .slide {
             width: 100%;
-            height: 60vh;
-            /* Responsive height */
+            height: 100vh;
             object-fit: cover;
             display: none;
         }
@@ -230,11 +227,11 @@
 
         @keyframes fade {
             from {
-                opacity: 0.5
+                opacity: 0.5;
             }
 
             to {
-                opacity: 1
+                opacity: 1;
             }
         }
 
@@ -246,60 +243,20 @@
             z-index: 10;
         }
 
-        /* --- Buttons --- */
-        .btn-orange {
-            background-color: var(--bjp-orange);
-            color: white !important;
-            border: none;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-
-        #lang-btn {
-            cursor: pointer;
-            font-weight: bold;
-            border: 2px solid var(--bjp-orange);
-            color: var(--bjp-orange);
-            background: transparent;
-            padding: 5px 15px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        #lang-btn:hover {
-            background: var(--bjp-orange);
-            color: white;
-        }
-
-        /* --- Language Visibility --- */
+        /* =========================================
+   MARATHI LANGUAGE SUPPORT
+========================================= */
         .lang-mr {
             display: none;
         }
 
-        /* --- Mobile Specific Fixes --- */
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background: white;
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-item {
-                margin-bottom: 10px;
-            }
-
-            .slide {
-                height: 40vh;
-            }
-        }
-
-        /* --- Footer --- */
+        /* =========================================
+   FOOTER
+========================================= */
         footer {
             background: var(--footer-bg);
             color: #bbb;
+            padding: 50px 0;
         }
 
         .footer-link {
@@ -318,13 +275,76 @@
         .text-orange {
             color: var(--bjp-orange) !important;
         }
+
+        /* =========================================
+   RESPONSIVE NAV – MOBILE
+========================================= */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-nav .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-collapse {
+                background: var(--white);
+                padding: 25px 20px;
+                border-radius: 12px;
+                margin-top: 12px;
+                box-shadow: var(--shadow);
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .navbar-toggler {
+                margin-left: auto;
+                border: none;
+                outline: none;
+                box-shadow: none !important;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* =========================================
+   EXTRA SMALL MOBILE FIX
+========================================= */
+        @media (max-width: 480px) {
+            .brand-logo {
+                height: 40px;
+            }
+
+            #lang-btn {
+                padding: 5px 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header class="main-header navbar navbar-expand-lg fixed-top">
-        <div class="container">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- BRAND -->
             <a class="navbar-brand d-flex align-items-center brand-animate" href="index.html">
                 <img src="./assets/Images/logo.png" alt="Logo" class="brand-logo" />
                 <span class="ms-2 fw-bold brand-text">
@@ -333,38 +353,58 @@
                 </span>
             </a>
 
-
+            <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- MENU -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><span class="lang-en">Home</span><span
-                                class="lang-mr">मुख्यपृष्ठ</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"><span class="lang-en">About</span><span
-                                class="lang-mr">माझ्याबद्दल</span></a></li>
+
+                <ul class="navbar-nav mx-auto align-items-center nav-gap">
+                    <li class="nav-item"><a class="nav-link" href="index.html">
+                            <span class="lang-en">Home</span><span class="lang-mr">मुख्यपृष्ठ</span></a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="about.html">
+                            <span class="lang-en">About</span><span class="lang-mr">माझ्याबद्दल</span></a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <span class="lang-en">More</span><span class="lang-mr">अधिक</span>
+                            <span class="lang-en">More</span>
+                            <span class="lang-mr">अधिक</span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="party.html"><span class="lang-en">Party Info</span><span
-                                        class="lang-mr">पक्ष माहिती</span></a></li>
-                            <li><a class="dropdown-item" href="vision.html"><span class="lang-en">My Vision</span><span
-                                        class="lang-mr">माझा दृष्टिकोन</span></a></li>
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="party.html">
+                                    <span class="lang-en">Party Info</span>
+                                    <span class="lang-mr">पक्ष माहिती</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="vision.html">
+                                    <span class="lang-en">Vision</span>
+                                    <span class="lang-mr">दृष्टिकोन</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item mx-lg-2"><button id="lang-btn" onclick="toggleLanguage()">मराठी</button></li>
-                    <li class="nav-item mt-2 mt-lg-0">
-                        <a href="contact.html" class="btn btn-orange">
-                            <span class="lang-en">Contact Us</span><span class="lang-mr">संपर्क करा</span>
-                        </a>
-                    </li>
                 </ul>
+
+                <!-- RIGHT BUTTONS -->
+                <div class="d-flex align-items-center">
+                    <button id="lang-btn" onclick="toggleLanguage()" class="me-2">मराठी</button>
+
+                    <a href="contact.html" class="btn btn-orange">
+                        <span class="lang-en">Contact Us</span>
+                        <span class="lang-mr">संपर्क करा</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
+
 
     <main>
         <section class="slider-section position-relative">
@@ -498,13 +538,39 @@
         }
         setInterval(showSlides, 4000);
 
-        // Language Switcher
+        // Language Switcher Function
         function toggleLanguage() {
             const enElements = document.querySelectorAll('.lang-en');
             const mrElements = document.querySelectorAll('.lang-mr');
             const btn = document.getElementById('lang-btn');
 
             if (btn.innerText === "मराठी") {
+                // Switch to Marathi
+                enElements.forEach(el => el.style.display = 'none');
+                mrElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "English";
+
+                // Save preference
+                localStorage.setItem('lang', 'mr');
+            } else {
+                // Switch to English
+                enElements.forEach(el => el.style.display = 'inline-block');
+                mrElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "मराठी";
+
+                // Save preference
+                localStorage.setItem('lang', 'en');
+            }
+        }
+
+        // Apply saved language on page load
+        function applySavedLanguage() {
+            const savedLang = localStorage.getItem('lang') || 'en'; // default English
+            const enElements = document.querySelectorAll('.lang-en');
+            const mrElements = document.querySelectorAll('.lang-mr');
+            const btn = document.getElementById('lang-btn');
+
+            if (savedLang === 'mr') {
                 enElements.forEach(el => el.style.display = 'none');
                 mrElements.forEach(el => el.style.display = 'inline-block');
                 btn.innerText = "English";
@@ -514,6 +580,10 @@
                 btn.innerText = "मराठी";
             }
         }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', applySavedLanguage);
+
     </script>
 </body>
 

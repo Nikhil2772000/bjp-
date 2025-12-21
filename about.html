@@ -4,114 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Sulakshana Tai Shilwant</title>
+    <link rel="icon" href="./assets/Images/logo.png" sizes="128x128" type="image/png">
+    <title>About | Sarala Mandar Bahekar</title>
 
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- ANIMATE CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <!-- FONT AWESOME -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ========================================
-   GLOBAL COLORS & BODY BACKGROUND
-========================================= */
         :root {
-            --primary: #0d6efd;
-            --dark: #1a1a1a;
-            --text-dark: #333;
+            --bjp-orange: #ff9933;
+            --text-dark: #1a1a1a;
+            --white: #ffffff;
+            --footer-bg: #212529;
+            --bjp-blue: #0d65bd;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
+        /* GLOBAL BODY */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: "Roboto", sans-serif;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, #bbdefb, #64b5f6, #42a5f5);
-            background-size: 400% 400%;
-            animation: gradientBg 10s ease infinite, fadeInBody 1.5s ease-in-out;
+            font-family: 'Inter', sans-serif;
+            background: var(--bjp-blue);
+            color: var(--white);
+            overflow-x: hidden;
+            padding-top: 80px;
         }
 
-        /* Animated Gradient Background */
-        @keyframes gradientBg {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+        /* HEADER / NAVBAR */
+        .main-header {
+            transition: all 0.3s ease;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            display: flex;
+            align-items: center;
         }
 
-        /* Fade Body Load */
-        @keyframes fadeInBody {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        /* SCROLL SHADOW */
+        .navbar-scrolled {
+            background: var(--white) !important;
+            box-shadow: var(--shadow);
         }
 
-        /* ========================================
-   HEADER
-========================================= */
-        .page-header {
-            background: var(--primary);
-            color: white;
-            padding: 25px 0;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            animation: fadeUp 1s ease-in-out;
+        .navbar-nav {
+            display: flex;
+            align-items: center;
         }
 
-        /* ========================================
-   IMAGE ANIMATION
-========================================= */
-        .zoom-img {
-            transition: all 0.4s ease;
-            animation: fadeInScale 1.2s ease;
+        /* Logo */
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            transition: 0.3s ease;
         }
 
-        .zoom-img:hover {
-            transform: scale(1.07);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+        /* Brand text */
+        .brand-text {
+            color: var(--white);
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: 0.3s ease;
         }
 
-        /* Fade Scale Animation */
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.7);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        /* Hover animation */
+        .brand-animate:hover .brand-logo {
+            transform: scale(1.1) rotate(-3deg);
         }
 
-        /* Fade Up Sections */
-        .fadeBox {
+        .brand-animate:hover .brand-text {
+            color: #f51414;
+        }
+
+        /* Initial animation */
+        .brand-animate {
+            animation: fadeSlideIn 1s ease forwards;
             opacity: 0;
-            animation: fadeUp 1s ease forwards;
         }
 
-        @keyframes fadeUp {
+        @keyframes fadeSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-10px);
             }
 
             to {
@@ -120,546 +98,455 @@
             }
         }
 
-        /* ========================================
-   CTA BUTTON (CENTER)
-========================================= */
-        .vision-btn {
+        @media (max-width: 768px) {
+
+            /* Reduce logo size on mobile */
+            .brand-logo {
+                height: 40px;
+            }
+
+            /* Adjust text size */
+            .brand-text {
+                font-size: 0.95rem;
+                text-align: center;
+                line-height: 1.3;
+            }
+
+            /* Adjust animation intensity for small screens */
+            .brand-animate:hover .brand-logo {
+                transform: scale(1.05) rotate(-2deg);
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            .brand-logo {
+                height: 60px;
+            }
+
+            .brand-text {
+                font-size: 1.25rem;
+            }
+        }
+
+
+
+
+
+        .nav-gap>li {
+            margin: 0 4px;
+        }
+
+        /* NAV LINKS — DESKTOP STYLE */
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+            padding: 8px 15px;
+            margin: 0 5px;
+            text-align: center;
             display: block;
-            margin: 40px auto;
-            padding: 14px 35px;
-            font-size: 18px;
-            border-radius: 8px;
-            animation: fadeInScale 1.3s ease;
         }
 
-        /* ========================================
-   FOOTER
-========================================= */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 25px 0;
+        .nav-link:hover {
+            color: var(--bjp-orange) !important;
         }
 
-        .footer-area {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-left img {
-            width: 35px;
-            margin-right: 15px;
+        /* LANGUAGE BUTTON */
+        #lang-btn {
             cursor: pointer;
-            transition: 0.4s ease;
+            font-weight: bold;
+            border: 2px solid var(--bjp-orange);
+            color: var(--bjp-orange);
+            background: transparent;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
         }
 
-        .footer-left img:hover {
-            transform: scale(1.2);
+        #lang-btn:hover {
+            background: var(--bjp-orange);
+            color: var(--white);
         }
 
-        .footer-right {
-            text-align: right;
-            font-size: 16px;
+        /* ORANGE BUTTON */
+        .btn-orange {
+            background: var(--bjp-orange);
+            color: var(--white) !important;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 10px 20px;
+            border: none;
         }
 
-        /* ========================================
-   RESPONSIVE FOOTER (MOBILE)
-========================================= */
-        @media(max-width: 768px) {
-            .footer-area {
+        /* MARATHI TEXT */
+        .lang-mr {
+            display: none;
+        }
+
+        /* ===================== ABOUT SECTION ===================== */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-section h2 {
+            color: var(--bjp-orange);
+            font-weight: 700;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .about-img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--footer-bg);
+            color: #bbb;
+            padding: 50px 0;
+        }
+
+        .footer-link {
+            color: #bbb;
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-link:hover {
+            color: var(--bjp-orange);
+            padding-left: 5px;
+        }
+
+        .text-orange {
+            color: var(--bjp-orange) !important;
+        }
+
+        /**************************************
+📌 MOBILE RESPONSIVE NAV
+**************************************/
+        @media (max-width: 991px) {
+
+            /* Navbar Right Align */
+            .navbar-nav {
+                width: 100%;
+                justify-content: flex-end;
+                align-items: flex-end;
+                text-align: right;
+                gap: 10px;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-nav .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-collapse {
+                background: var(--white);
+                padding: 25px 20px;
+                border-radius: 12px;
+                margin-top: 12px;
+                box-shadow: var(--shadow);
+                display: flex;
                 flex-direction: column;
+                gap: 20px;
+                align-items: flex-end;
+            }
+
+            /* Toggle Icon Right */
+            .navbar-toggler {
+                margin-left: auto;
+                border: none;
+                outline: none;
+                box-shadow: none !important;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* Dropdown Menu – Center Align */
+            .dropdown-menu {
                 text-align: center;
-            }
-
-            .footer-left {
-                margin-bottom: 10px;
-            }
-
-            .footer-left img {
-                width: 32px;
-                margin: 0 10px;
-            }
-
-            .footer-right {
-                text-align: center;
-                margin-top: 10px;
-            }
-
-            .vision-btn {
-                width: 90%;
-                font-size: 16px;
-            }
-
-            .zoom-img {
-                max-width: 90%;
-            }
-        }
-
-        /* Extra small mobile (0–480px) */
-        @media(max-width: 480px) {
-            .page-header {
+                border: none;
+                background: #f8f9fa;
+                width: 100%;
                 padding: 15px 0;
-                font-size: 18px;
             }
 
-            .vision-btn {
-                padding: 12px 25px;
-                font-size: 15px;
+            .dropdown-item {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                font-size: 1.05rem;
+                color: var(--text-dark) !important;
             }
 
-            footer {
-                padding: 20px 0;
+            .dropdown-item:hover {
+                background: var(--bjp-orange);
+                color: white !important;
+            }
+
+            /* ABOUT SECTION */
+            .about-section {
+                padding: 40px 0;
+                text-align: center;
+            }
+
+            .about-section .row {
+                flex-direction: column;
+            }
+
+            /* Swap order on mobile */
+            .mobile-order-swap {
+                display: flex;
+                flex-direction: column-reverse;
             }
         }
 
-        
-/* ============================================================
-   HEADER + NAVBAR
-============================================================ */
-.main-header {
-    background: #ffffffee;
-    backdrop-filter: blur(6px);
-    padding: 10px 20px;
-    border-bottom: 3px solid #007bff;
-    animation: slideDown 1s ease;
-}
+        /* SMALL MOBILE FIX */
+        @media (max-width: 480px) {
+            .brand-logo {
+                height: 40px;
+            }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-40px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* LOGO */
-.logo-img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* CANDIDATE NAME */
-.candidate-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-/* ================= NAV LINKS ================= */
-.navbar-nav .nav-link {
-    color: #333;
-    font-weight: 600;
-    padding: 10px 18px !important;
-    transition: .25s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #007bff;
-    transform: translateY(-2px);
-}
-
-/* ================= BUTTONS ================= */
-.nav-btn {
-    background-color: #0056b3;
-    color: #fff !important;
-    padding: 8px 18px;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: .25s;
-}
-
-.nav-btn:hover {
-    background-color: #004494;
-    transform: translateY(-2px);
-}
-
-/* Marathi Button */
-.marathi-btn {
-    background-color: #d9534f;
-}
-
-.marathi-btn:hover {
-    background-color: #b44440;
-}
-
-/* ================= SOCIAL ICONS ================= */
-.social-links img {
-    width: 28px;
-    transition: .3s;
-}
-
-.social-links img:hover {
-    transform: scale(1.15);
-}
-
-/* ============================================================
-   MOBILE RESPONSIVE STYLES
-============================================================ */
-@media (max-width: 991px) {
-
-    /* Hide long name on mobile */
-    .candidate-name {
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-
-    /* Mobile nav background */
-    #navbarNav {
-        background: #fff;
-        padding-bottom: 15px;
-        border-top: 2px solid #007bff;
-        margin-top: 10px;
-    }
-
-    /* Mobile nav links spacing */
-    .nav-link {
-        padding: 12px 0 !important;
-        font-size: 16px;
-    }
-
-    /* Mobile buttons full width */
-    .nav-btn {
-        width: 90%;
-        margin: auto;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    /* Center social icons */
-    .social-links {
-        justify-content: center !important;
-        margin-top: 10px;
-    }
-}
+            #lang-btn {
+                padding: 5px 10px;
+            }
+        }
     </style>
+</head>
 
 <body>
 
-     <!-- ================= HEADER ================= -->
-    <header class="main-header navbar navbar-expand-lg shadow-sm">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+    <header class="main-header navbar navbar-expand-lg fixed-top">
+        <div class="container">
 
-            <!-- LEFT: LOGO + NAME -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="../assets/Images/logo.png" alt="Logo" class="logo-img me-2">
-                <h1 class="candidate-name mb-0 d-none d-lg-block">Dr. Sulakshana Shilwant - Dhar</h1>
+            <!-- BRAND -->
+            <a class="navbar-brand d-flex align-items-center brand-animate" href="index.html">
+                <img src="./assets/Images/logo.png" alt="Logo" class="brand-logo" />
+                <span class="ms-2 fw-bold brand-text">
+                    <span class="lang-en">Sarala Mandar Bahekar</span>
+                    <span class="lang-mr">सरला मंदार बाहेकर</span>
+                </span>
             </a>
 
-            <!-- MOBILE TOGGLER (RIGHT SIDE) -->
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><span class="lang-en">Home</span><span
+                                class="lang-mr">मुख्यपृष्ठ</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html"><span
+                                class="lang-en">About</span><span class="lang-mr">माझ्याबद्दल</span></a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <span class="lang-en">More</span><span class="lang-mr">अधिक</span>
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="party.html"><span class="lang-en">Party Info</span><span
+                                        class="lang-mr">पक्ष माहिती</span></a></li>
+                            <li><a class="dropdown-item" href="vision.html"><span class="lang-en">My Vision</span><span
+                                        class="lang-mr">माझा दृष्टिकोन</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><button id="lang-btn" onclick="toggleLanguage()">मराठी</button></li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="btn btn-orange">
+                            <span class="lang-en">Contact Us</span><span class="lang-mr">संपर्क करा</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <!-- NAV MENU -->
-        <nav class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start">
-
-                <li class="nav-item"><a id="navHome" class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a id="navAbout" class="nav-link" href="about.html">About Me</a></li>
-                <li class="nav-item"><a id="navParty" class="nav-link" href="party.html">Party Info</a></li>
-                <li class="nav-item"><a id="navContact" class="nav-link" href="contact.html">Contact Us</a></li>
-
-                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-                    <a href="vision.html" id="visionBtn" class="btn nav-btn w-100">My Vision</a>
-                </li>
-
-                <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-                    <button id="langToggleBtn" class="btn nav-btn marathi-btn w-100">Marathi</button>
-                </li>
-
-                <!-- SOCIAL ICONS -->
-                <li class="social-links nav-item ms-lg-3 d-flex justify-content-center align-items-center mt-2 mt-lg-0">
-                    <a href="#" class="me-2"><img src="../assets/Images/facebook.avif" alt="Facebook"></a>
-                    <a href="#" class="me-2"><img src="../assets/Images/instgram.webp" alt="Instagram"></a>
-                    <a href="#" class="me-2"><img src="../assets/Images/youtube.avif" alt="YouTube"></a>
-                    <a href="#"><img src="../assets/Images/twitter.png" alt="Twitter/X"></a>
-                </li>
-
-            </ul>
-        </nav>
     </header>
 
-
-    <!-- HEADER -->
-    <header class="page-header animate__animated animate__fadeInDown">
-        <h1 class="fw-bold">About </h1>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main class="container my-5">
-
-        <!-- SECTION 1 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7 order-md-2">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>As you know, Maharashtra Vidhan-sabha elections are just around the corner and like always
-                            there are many names doing the rounds as a potential candidate to represent our
-                            constituency. I am humbled as well as excited to be considered as one of the potential
-                            candidates, based on the feedback received from people. Hence I feel it's my moral
-                            responsibility to share some more details about myself with all of you to know me better.
-                        </p>
-
-                    </div>
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="./assets/Images/buldhana.webp" alt="Buldhana" class="about-img">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">
+                        <span class="lang-en">About</span>
+                        <span class="lang-mr">माझ्याबद्दल
+                        </span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">Buldhana is a vibrant district in Maharashtra, known for its rich culture,
+                            historical heritage, and continuous development initiatives. With a diverse population and
+                            strong rural roots, the district holds immense potential for future growth. Sarala Mandar
+                            Bahekar is actively working towards the holistic development and welfare of Buldhana,
+                            focusing on social upliftment, education, infrastructure, youth empowerment, and community
+                            well-being. Through dedication and progressive initiatives, she aims to create sustainable
+                            growth and long-term opportunities for the people of the district.</span>
+                        <span class="lang-mr">बुबुलढाणा हा महाराष्ट्रातील एक चैतन्यमय जिल्हा आहे, जो आपल्या समृद्ध
+                            संस्कृती, ऐतिहासिक वारसा आणि सततच्या विकास कार्यांसाठी ओळखला जातो. विविध लोकसंख्या आणि मजबूत
+                            ग्रामीण मुळे असलेल्या या जिल्ह्यात भविष्यातील वाढीसाठी प्रचंड क्षमता आहे. सरला मंदार बाहेकर
+                            बुलढाण्याच्या सर्वांगीण विकास आणि कल्याणासाठी सक्रियपणे कार्यरत आहेत, ज्यामध्ये सामाजिक
+                            उत्थान, शिक्षण, पायाभूत सुविधा, युवा सक्षमीकरण आणि सामुदायिक कल्याणावर लक्ष केंद्रित केले
+                            आहे. समर्पण आणि पुरोगामी उपक्रमांद्वारे, त्यांचा उद्देश जिल्ह्यातील लोकांसाठी शाश्वत विकास
+                            आणि दीर्घकालीन संधी निर्माण करणे आहे.</span>
+                    </p>
                 </div>
             </div>
 
-            <div class="col-md-5 order-md-1 text-center">
-                <img src="../assets/Images/photo 1.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Sulakshana Tai">
-            </div>
-        </section>
-
-        <!-- SECTION 2 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>As usual like any other women I too having two names; my maiden name being Ms. Sulakshana
-                            Ashok Shilwant and after marriage I am known as Mrs Sulakshana Raju Dhar. Having said that I
-                            am a daughter, a sister, a wife, a mother and with your blessings presently also I am
-                            corporator of ward No 20. I was born in my hometown 'Thomse' a small rural Village in Patan
-                            Taluka of Satara District where I completed my primary education. Owing to my father's
-                            official transfer I completed my secondary education from a municipal school in Pimpri and
-                            Junior college from S.N.D.T women's college in Pune. I finally completed my Graduation
-                            (B.com) from the renowned Symbiosis College in Pune. Along with that, I also received a
-                            Doctorate of Social Science from The American University, USA in 2021. I have experienced a
-                            very diversified group of friends and colleagues from across religion, color, caste and
-                            financial status. Looking back today I feel this massive transition and exposure has helped
-                            meto understand the difficulties and requirements of both rural as well as urban citizens
-                            better.</p>
-                    </div>
+            <div class="row align-items-center mobile-order-swap" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">
+                        <span class="lang-en">BJP Initiatives in Buldhana</span>
+                        <span class="lang-mr">बुलढाण्यातील भाजप उपक्रम</span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">The BJP is dedicated to transforming Buldhana through a wide range of
+                            development initiatives, including social welfare schemes, quality education programs, and
+                            large-scale infrastructure projects. Our mission is to empower every citizen—whether in
+                            rural or urban areas—by providing better facilities, modern resources, and sustainable
+                            growth opportunities. We are working to improve roads, schools, healthcare services, digital
+                            connectivity, and employment prospects, ensuring that Buldhana becomes a leading district in
+                            Maharashtra with equal benefits for all communities.</span>
+                        <span class="lang-mr">भाजप सामाजिक कल्याण योजना, दर्जेदार शिक्षण कार्यक्रम आणि मोठ्या
+                            प्रमाणावरील पायाभूत सुविधा प्रकल्पांसह विविध विकास उपक्रमांद्वारे बुलढाण्याचा कायापालट
+                            करण्यासाठी कटिबद्ध आहे. ग्रामीण असो वा शहरी, प्रत्येक नागरिकाला उत्तम सुविधा, आधुनिक संसाधने
+                            आणि शाश्वत विकासाच्या संधी उपलब्ध करून देऊन सक्षम करणे हे आमचे ध्येय आहे. आम्ही रस्ते, शाळा,
+                            आरोग्य सेवा, डिजिटल कनेक्टिव्हिटी आणि रोजगाराच्या संधी सुधारण्यासाठी काम करत आहोत, जेणेकरून
+                            बुलढाणा हा महाराष्ट्रातील एक अग्रगण्य जिल्हा बनेल आणि सर्व समुदायांना समान लाभ
+                            मिळतील.</span>
+                    </p>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="./assets/Images/buldhana 2.webp" alt="BJP Initiatives" class="about-img">
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="col-md-5 text-center">
-                <img src="../assets/Images/photo 2.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Childhood Photo">
-            </div>
-        </section>
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-orange fw-bold mb-4">
+                        <span class="lang-en">Sarala Mandar Bahekar</span><span class="lang-mr">सरला मंदार बाहेकर</span>
+                    </h5>
+                    <p class="small">
+                        <span class="lang-en">Working for the holistic development of Buldhana district.</span>
+                        <span class="lang-mr">बुलढाणा जिल्ह्याच्या सर्वांगीण विकासासाठी कार्यरत.</span>
+                    </p>
+                    <div class="d-flex mt-3">
+                        <a href="https://www.instagram.com/mandar_bahekar/" class="text-orange me-3 fs-4"><i
+                                class="fab fa-instagram"></i></a>
 
-        <!-- SECTION 3 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7 order-md-2">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>My inclination towards Social Services and Politics has been inherited from my family. My
-                            great grandfather was an active participant in the Patri Sarkarof the Kranti Singh Nana
-                            Patil. My grandfather was a school teacher in Satara Zilla Parishad School. My grandmother
-                            was not just a homemaker but she has also served as Sarpanch of our Village for 5-year term
-                            winning the election unopposed. My uncle is a Director of Patan Taluka Sarkari milk Union
-                            from past 25 years, my mother is a successful homemaker and two brothers are successfully
-                            handling their own business. I had an inter-caste marriage with a Kashmiri Pandit Mr Raju
-                            Dhar with blessings of our families. My husband is running a successful Pharmaceuticals
-                            business of his own.</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-5 text-center order-md-1">
-                <img src="../assets/Images/photo 3.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Family Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 4 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>My late father, Dr. Ashok Shilwant, was employed in a government job. Through the Ashok
-                            Sarvangeen Vikas Society, he worked for 31 years in various fields such as social work,
-                            education, culture, literature, art, and cooperation. Due to this, he was known not only
-                            throughout Maharashtra but also in India as true disciple and follower of 'Samrat Ashoka'.
-                            To elevate the economic status of the underprivileged in society, he established the Ashok
-                            Nagari Cooperative Bank. I have been managing the responsibilities at this bank, starting
-                            from the position of Junior Clerk to now serving as the Chief Manager. The inspiration for
-                            social work that I received from my father, along with my experience in the cooperative
-                            sector, has enabled me to directly connect with the public and helped me to build a strong
-                            bond with them.</p>
-                    </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-4"><span class="lang-en">Links</span><span
+                            class="lang-mr">दुवे</span></h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="vision.html" class="footer-link">Vision</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4"><span class="lang-en">Location</span><span
+                            class="lang-mr">ठिकाण</span></h5>
+                    <p class="small"><i class="fas fa-map-marker-alt me-2 text-orange"></i> Buldhana, Maharashtra</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4"><span class="lang-en">Contact</span><span
+                            class="lang-mr">संपर्क</span></h5>
+                    <p class="small mb-1"><i class="fas fa-envelope me-2 text-orange"></i> info@saralabahekar.in</p>
+                    <p class="small"><i class="fas fa-phone me-2 text-orange"></i> +91 98765 43210</p>
                 </div>
             </div>
-
-            <div class="col-md-5 text-center">
-                <img src="../assets/Images/photo 4.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="reward Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 5 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7 order-md-2">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>Due to the Indian constitution laid down by Dr. Babasaheb Ambedkar it was possible to have
-                            reservation for backward class community in elections. Later with the initiative of Shri
-                            Sharadchandraji Pawar Saheb there was 50% reservation for women in local body elections. As
-                            a result of this I was given an opportunity to contest for Corporation election in PCMC at
-                            Sant Tukaram Nagar division 20, and with the support, guidance and blessings from all of you
-                            I was elected with huge vote margins in my first attempt in year 2017. Since the beginning I
-                            have been working day-night in Municipal Corporation as a representative of ward 20 from the
-                            past seven years. I have got the opportunity to work at various platforms in the Municipal
-                            Corporation like 'Women & Child Welfare Committee, Law Committee, Education Committee, and
-                            City Improvement Committee. Even though I am a part of opposition party in the local body I
-                            consider it's my duty to work hard, bring fresh ideas and solutions to make strategic
-                            decision without opposition from the government to up lift our society and fulfil basic
-                            needs of mankind.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 text-center order-md-1">
-                <img src="../assets/Images/photo 5.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Family Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 6 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>With everyone's blessings, in 2019, I was announced as the candidate for the Pimpri Assembly
-                            constituency by the Nationalist Congress Party. However, due to some unexpected local
-                            political circumstances, I missed that opportunity. Despite this, I did not lose heart. I
-                            remained loyal and faithfully worked for the candidates chosen by the party, following the
-                            orders given by the party. Those candidates were also elected. A year ago, after the party
-                            split, I was the only councillor who remained true to my beliefs, principles, and the will
-                            of my beloved voters, and I steadfastly remained loyal to the esteemed Sharad Pawar Saheb.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 text-center">
-                <img src="../assets/Images/photo6.jpeg" class="img-fluid rounded shadow-lg zoom-img" alt="reward Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 7 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>Over the past seven years, I have experienced many ups and downs. I lost my beloved son, who
-                            was a divine gift of motherhood to me. My father, who shaped me inside and out, left us.
-                            Recently, my father-in-law, who cared for me like a father, also passed away. I was able to
-                            recover and support my family through these numerous challenges because all of you truly
-                            became my support and gave strength to me and my family.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 text-center">
-                <img src="../assets/Images/photo 7.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Childhood Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 8 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7 order-md-2">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>'Your life should not just be like waves that crash against the shore and then retreat. You
-                            need to have the strength and patience like the ocean, which faces hundreds of storms at
-                            once and emerges victorious!'</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 text-center order-md-1">
-                <img src="../assets/Images/photo 8.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Family Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 9 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>In my childhood along with my friends I was an active Sangh Shakha member, I was involved in
-                            NSS camps in my college and actively participated in every task. I have attended Vipassana
-                            (meditation) as well, so as to discipline my body and mind, I believe it has become my way
-                            of living life now.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 text-center">
-                <img src="../assets/Images/photo 9.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Childhood Photo">
-            </div>
-        </section>
-
-        <!-- SECTION 8 -->
-        <section class="bio-section row align-items-center mb-5 fadeBox">
-            <div class="col-md-7 order-md-2">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <p>I feel it's very crucial for every citizen to know in-depth details about their local
-                            candidates like their personal, educational and skills related background; to choose among
-                            the various alternatives available. Hence instead of putting a hoarding, roadside banner
-                            feel communicating via this letter will be appropriate. This is my little effort to reach
-                            out to each and every one of you for...!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 text-center order-md-1">
-                <img src="../assets/Images/photo 10.jpeg" class="img-fluid rounded shadow-lg zoom-img"
-                    alt="Family Photo">
-            </div>
-        </section>
-
-
-
-
-
-
-
-        <!-- CTA BUTTON IN CENTER -->
-        <a href="vision.html">
-            <button class="btn btn-primary btn-lg vision-btn animate__animated animate__shakeX">
-                Click Here to View My Vision
-            </button>
-        </a>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container d-flex flex-wrap justify-content-between align-items-center">
-
-            <!-- LEFT ICONS -->
-            <div class="footer-left d-flex align-items-center">
-                <a href="https://www.facebook.com/SulakshanaShilwantDhar"><img
-                        src="https://img.icons8.com/fluency/48/facebook-new.png"></a>
-                <a href="https://www.instagram.com/dr_sulakshana_shilwant_dhar/#"><img
-                        src="https://img.icons8.com/fluency/48/instagram-new.png"></a>
-                <a href="https://www.youtube.com/@drsulakshanashilwantdhar"><img
-                        src="https://img.icons8.com/fluency/48/youtube-play.png"></a>
-                <a href="https://x.com/SulakshanaDhar"><img src="https://img.icons8.com/fluency/48/twitter.png"></a>
-            </div>
-
-            <!-- RIGHT TEXT -->
-            <div class="footer-right">
-                Designed & Developed by <strong>Yashaswi Enterprises</strong>, Pune
-            </div>
-
+            <hr class="border-secondary mt-5">
+            <p class="text-center small mb-0">&copy; <span id="currentYear"></span>
+                <span class="lang-en">Developed by Nikhil Joshi</span>
+                <span class="lang-mr">निखिल जोशी द्वारा विकसित</span>
+            </p>
         </div>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        // Language Switcher Function
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const mrElements = document.querySelectorAll('.lang-mr');
+            const btn = document.getElementById('lang-btn');
+
+            if (btn.innerText === "मराठी") {
+                // Switch to Marathi
+                enElements.forEach(el => el.style.display = 'none');
+                mrElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "English";
+
+                // Save preference
+                localStorage.setItem('lang', 'mr');
+            } else {
+                // Switch to English
+                enElements.forEach(el => el.style.display = 'inline-block');
+                mrElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "मराठी";
+
+                // Save preference
+                localStorage.setItem('lang', 'en');
+            }
+        }
+
+        // Apply saved language on page load
+        function applySavedLanguage() {
+            const savedLang = localStorage.getItem('lang') || 'en'; // default English
+            const enElements = document.querySelectorAll('.lang-en');
+            const mrElements = document.querySelectorAll('.lang-mr');
+            const btn = document.getElementById('lang-btn');
+
+            if (savedLang === 'mr') {
+                enElements.forEach(el => el.style.display = 'none');
+                mrElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "English";
+            } else {
+                enElements.forEach(el => el.style.display = 'inline-block');
+                mrElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "मराठी";
+            }
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', applySavedLanguage);
+
+    </script>
 </body>
+
 </html>

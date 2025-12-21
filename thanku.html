@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - BJP</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --bjp-orange: #ff9933;
+            --text-dark: lch(42.85% 58.43 30.01);
+            --white: #e7ecec;
+            --footer-bg: #212529;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* BODY */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: #0d65bd;
+            overflow-x: hidden;
+        }
+
+        /* navbar scroll opacity */
+        #navbar {
+            transition: 0.4s;
+        }
+
+        .scroll-active {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        /* firecracker effect */
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: yellow;
+            border-radius: 50%;
+            animation: explode 0.7s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2) translateY(-40px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white overflow-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full py-4 px-6 flex justify-between items-center z-50">
+        <h2 class="text-xl font-bold text-yellow-300">Guru Software Solution</h2>
+    </nav>
+
+    <!-- Firecracker container -->
+    <div id="fireworkArea" class="absolute inset-0 overflow-hidden"></div>
+
+    <!-- Thank You Section -->
+    <section class="flex flex-col justify-center items-center text-center min-h-screen px-4">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/148/148767.png" class="w-32 md:w-40 animate-bounce mb-6" />
+
+        <h1 class="text-3xl md:text-5xl font-bold text-yellow-300">
+            Thank You!
+        </h1>
+
+        <p class="text-lg md:text-xl max-w-[600px] mt-4 text-gray-300">
+            Your message has been received successfully.
+            Our connected team will get in touch with you shortly.
+        </p>
+
+        <a href="index.html"
+            class="mt-6 bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-lg font-semibold">
+            Go Back Home
+        </a>
+    </section>
+
+    <!-- Script for navbar scroll opacity -->
+    <script>
+        window.addEventListener("scroll", function () {
+            const nav = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                nav.classList.add("scroll-active");
+            } else {
+                nav.classList.remove("scroll-active");
+            }
+        });
+    </script>
+
+    <!-- Firecracker Animation Script -->
+    <script>
+        function createFirework() {
+            const fw = document.createElement("div");
+            fw.classList.add("firework");
+            fw.style.left = Math.random() * window.innerWidth + "px";
+            fw.style.top = Math.random() * window.innerHeight + "px";
+            fw.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+            document.getElementById("fireworkArea").appendChild(fw);
+
+            setTimeout(() => fw.remove(), 700);
+        }
+
+        setInterval(createFirework, 150);
+    </script>
+
+</body>
+
+</html>

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/Images/logo.png" sizes="128x128" type="image/png">
     <title>Contact Us | Sarala Mandar Bahekar</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,50 +14,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* ========================================= ROOT COLORS & VARIABLES ========================================= */
         :root {
             --bjp-orange: #ff9933;
-            --text-dark: #212529;
+            --text-dark: #1a1a1a;
             --white: #ffffff;
             --footer-bg: #212529;
+            --bjp-blue: #0d65bd;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* BODY */
+        /* ========================================= BODY ========================================= */
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background: #f8f9fa;
+            background: var(--bjp-blue);
+            color: var(--white);
             overflow-x: hidden;
+            padding-top: 80px;
         }
 
-        /* HEADER / NAVBAR */
+        /* ========================================= HEADER + NAVBAR ========================================= */
         .main-header {
             transition: all 0.3s ease;
             padding: 10px 0;
-            background: rgba(255, 255, 255, 0.95);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 999;
+            display: flex;
+            align-items: center;
+            background: transparent;
         }
 
-        /* BRAND LOGO */
+        .navbar-nav {
+            align-items: center;
+        }
+
+        /* Scroll visible */
+        .navbar-scrolled {
+            background: var(--white) !important;
+            box-shadow: var(--shadow);
+        }
+
+        /* Logo */
         .brand-logo {
             height: 50px;
             width: auto;
-            transition: transform 0.3s ease-in-out;
+            transition: 0.3s ease;
         }
 
-        /* BRAND TEXT */
+        /* Brand text */
         .brand-text {
-            color: #333;
+            color: var(--white);
             font-size: 1.1rem;
             display: flex;
             flex-direction: column;
             line-height: 1.2;
-            transition: color 0.3s ease-in-out;
+            transition: 0.3s ease;
         }
 
-        /* BRAND HOVER ANIMATION */
+        /* Hover animation */
         .brand-animate:hover .brand-logo {
             transform: scale(1.1) rotate(-3deg);
         }
@@ -64,7 +82,7 @@
             color: #f51414;
         }
 
-        /* BRAND FADE-IN ANIMATION */
+        /* Initial animation */
         .brand-animate {
             animation: fadeSlideIn 1s ease forwards;
             opacity: 0;
@@ -82,17 +100,50 @@
             }
         }
 
-        /*******************************
-      NAV LINKS STYLING
-*******************************/
-        .navbar-nav {
-            align-items: center;
+        @media (max-width: 768px) {
+
+            /* Reduce logo size on mobile */
+            .brand-logo {
+                height: 40px;
+            }
+
+            /* Adjust text size */
+            .brand-text {
+                font-size: 0.95rem;
+                text-align: center;
+                line-height: 1.3;
+            }
+
+            /* Adjust animation intensity for small screens */
+            .brand-animate:hover .brand-logo {
+                transform: scale(1.05) rotate(-2deg);
+            }
         }
 
+        @media (min-width: 1200px) {
+
+            .brand-logo {
+                height: 60px;
+            }
+
+            .brand-text {
+                font-size: 1.25rem;
+            }
+        }
+
+
+
+        /* Desktop nav spacing */
+        .nav-gap>li {
+            margin: 0 4px;
+        }
+
+        /* Desktop navigation links */
         .nav-link {
             font-weight: 500;
             color: #333 !important;
             padding: 8px 15px;
+            margin: 0 5px;
             text-align: center;
             display: block;
         }
@@ -101,7 +152,7 @@
             color: var(--bjp-orange) !important;
         }
 
-        /* LANGUAGE BUTTON */
+        /* Language Button */
         #lang-btn {
             cursor: pointer;
             font-weight: bold;
@@ -115,49 +166,70 @@
 
         #lang-btn:hover {
             background: var(--bjp-orange);
-            color: white;
+            color: rgb(224, 203, 203);
         }
 
-        /* ORANGE BUTTON */
+        /* Buttons */
         .btn-orange {
             background: var(--bjp-orange);
-            color: white !important;
+            color: var(--white) !important;
             font-weight: 600;
             border-radius: 8px;
             padding: 10px 20px;
             border: none;
         }
 
-        /* CONTACT BANNER */
+        /* Dropdown Menu – Center Align */
+        .dropdown-menu {
+            text-align: center;
+            border: none;
+            background: #e4e9ee;
+            width: 100%;
+            padding: 15px 0;
+        }
+
+        .dropdown-item {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.05rem;
+            color: var(--text-dark) !important;
+        }
+
+        .dropdown-item:hover {
+            background: var(--bjp-orange);
+            color: white !important;
+        }
+
+        /* ========================================= CONTACT PAGE BANNER ========================================= */
         .contact-banner {
             height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url("./assets/Images/budhana.avif") center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/Images/budhana.avif") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: rgb(223, 212, 212);
             margin-top: 70px;
         }
 
-        /* CONTACT CONTAINER */
+        /* Contact container sections */
         .contact-section {
             margin-top: -80px;
             padding-bottom: 80px;
         }
 
         .contact-wrapper {
-            background: white;
+            background: rgb(211, 13, 13);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
-        /* CONTACT PANEL */
+        /* ========================================= CONTACT SIDE PANEL ========================================= */
         .contact-info-panel {
             background: #1a1d20;
-            color: white;
+            color: rgb(13, 98, 179);
             padding: 50px;
         }
 
@@ -178,12 +250,12 @@
             margin-right: 15px;
         }
 
-        /* MARATHI TEXT */
+        /* ========================================= LANGUAGE ========================================= */
         .lang-mr {
             display: none;
         }
 
-        /* FOOTER */
+        /* ========================================= FOOTER ========================================= */
         footer {
             background: var(--footer-bg);
             color: #bbb;
@@ -207,12 +279,8 @@
             color: var(--bjp-orange) !important;
         }
 
-        /**************************************
-        MOBILE RESPONSIVE NAV
-**************************************/
+        /* ========================================= RESPONSIVE NAVIGATION (MOBILE) ========================================= */
         @media (max-width: 991px) {
-
-            /* Center Navbar Items */
             .navbar-nav {
                 width: 100%;
                 justify-content: center;
@@ -237,14 +305,14 @@
                 padding: 25px 20px;
                 border-radius: 12px;
                 margin-top: 12px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+                box-shadow: var(--shadow);
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
                 align-items: center;
             }
 
-            /* Toggle Icon Right */
+            /* Right aligned menu icon */
             .navbar-toggler {
                 margin-left: auto;
                 border: none;
@@ -267,7 +335,7 @@
             }
         }
 
-        /* SMALL MOBILE FIX */
+        /* ========================================= EXTRA SMALL MOBILE FIX ========================================= */
         @media (max-width: 480px) {
             .brand-logo {
                 height: 40px;
@@ -397,13 +465,6 @@
                             </div>
                         </div>
                     </form>
-                    <div id="formFeedback" class="text-center d-none py-5">
-                        <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
-                        <h4 class="fw-bold"><span class="lang-en">Thank You!</span><span class="lang-mr">धन्यवाद!</span>
-                        </h4>
-                        <p><span class="lang-en">Your message has been received.</span><span class="lang-mr">तुमचा संदेश
-                                प्राप्त झाला आहे.</span></p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -469,6 +530,32 @@
             const btn = document.getElementById('lang-btn');
 
             if (btn.innerText === "मराठी") {
+                // Switch to Marathi
+                enElements.forEach(el => el.style.display = 'none');
+                mrElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = "English";
+
+                // Save preference
+                localStorage.setItem('lang', 'mr');
+            } else {
+                // Switch to English
+                enElements.forEach(el => el.style.display = 'inline-block');
+                mrElements.forEach(el => el.style.display = 'none');
+                btn.innerText = "मराठी";
+
+                // Save preference
+                localStorage.setItem('lang', 'en');
+            }
+        }
+
+        // Apply saved language on page load
+        function applySavedLanguage() {
+            const savedLang = localStorage.getItem('lang') || 'en'; // default English
+            const enElements = document.querySelectorAll('.lang-en');
+            const mrElements = document.querySelectorAll('.lang-mr');
+            const btn = document.getElementById('lang-btn');
+
+            if (savedLang === 'mr') {
                 enElements.forEach(el => el.style.display = 'none');
                 mrElements.forEach(el => el.style.display = 'inline-block');
                 btn.innerText = "English";
@@ -479,17 +566,97 @@
             }
         }
 
-        // Simple Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', applySavedLanguage);
+
+        // Javascript Contact //
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
             e.preventDefault();
-            this.classList.add('d-none');
-            document.getElementById('formFeedback').classList.remove('d-none');
+
+            let fname = document.getElementById("fname");
+            let lname = document.getElementById("lname");
+            let mobile = document.getElementById("mobile");
+            let email = document.getElementById("email");
+            let message = document.getElementById("message");
+
+            let isValid = true;
+
+            resetError(fname, "fnameError");
+            resetError(lname, "lnameError");
+            resetError(mobile, "mobileError");
+            resetError(email, "emailError");
+            resetError(message, "messageError");
+
+            if (fname.value.trim() === "") { showError(fname, "fnameError"); isValid = false; }
+            if (lname.value.trim() === "") { showError(lname, "lnameError"); isValid = false; }
+            if (mobile.value.length !== 10) { showError(mobile, "mobileError"); isValid = false; }
+            if (!email.value.includes("@")) { showError(email, "emailError"); isValid = false; }
+            if (message.value.trim() === "") { showError(message, "messageError"); isValid = false; }
+
+            if (!isValid) {
+                showToast("⚠️ कृपया सर्व माहिती भरा | Please fill all required fields", "danger");
+                return;
+            }
+
+            let data = {
+                firstName: fname.value,
+                lastName: lname.value,
+                mobile: mobile.value,
+                email: email.value,
+                message: message.value
+            };
+
+            try {
+                let res = await fetch("https://localhost:7109/api/Contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    showToast("✔️ संदेश यशस्वी! Message sent successfully!", "success");
+
+                    setTimeout(() => {
+                        window.location.href = "thanku.html";
+                    }, 1500);
+
+                } else {
+                    showToast("❌ त्रुटी! Error occurred!", "danger");
+                }
+            }
+            catch (err) {
+                showToast("❌ सर्व्हर त्रुटी! Server error!", "danger");
+            }
         });
 
+        // Reset + Error Style
+        function showError(input, errorId) {
+            input.classList.add("border-danger");
+            document.getElementById(errorId).classList.remove("d-none");
+        }
+
+        function resetError(input, errorId) {
+            input.classList.remove("border-danger");
+            document.getElementById(errorId).classList.add("d-none");
+        }
+
         // Numeric only for mobile
-        document.getElementById('mobile').addEventListener('input', function () {
-            this.value = this.value.replace(/[^0-9]/g, '');
+        document.getElementById("mobile").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
         });
+
+        // Toast
+        function showToast(message, type) {
+            let t = document.getElementById("toast");
+            t.textContent = message;
+
+            t.classList.remove("d-none", "bg-success", "bg-danger");
+            t.classList.add(type === "success" ? "bg-success" : "bg-danger");
+
+            setTimeout(() => t.classList.add("d-none"), 2000);
+        }
+
+
     </script>
 </body>
 
