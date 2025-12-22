@@ -94,7 +94,7 @@ body {
 .nav-btn,
 .btn-orange {
     background-color: var(--bjp-orange);
-    color: rgb(241, 95, 10) !important;
+    color: rgb(243, 95, 10) !important;
     padding: 10px 25px !important;
     border-radius: 50px;
     font-weight: 600;
@@ -103,7 +103,7 @@ body {
 }
 
 .nav-btn:hover {
-    background-color: #e67e22;
+    background-color: #09a5ec;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 153, 51, 0.4);
 }

@@ -15,6 +15,9 @@
 
 
     <style>
+        /* =========================================
+   ROOT VARIABLES
+========================================= */
         :root {
             --bjp-orange: #ff9933;
             --text-dark: #1a1a1a;
@@ -24,36 +27,47 @@
             --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* GLOBAL BODY */
+
+        /* =========================================
+   GLOBAL RESET & BODY
+========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bjp-blue);
             color: var(--white);
-            overflow-x: hidden;
+            line-height: 1.6;
             padding-top: 80px;
+            overflow-x: hidden;
         }
 
-        /* HEADER / NAVBAR */
+        /* =========================================
+   HEADER / NAVIGATION
+========================================= */
         .main-header {
-            transition: all 0.3s ease;
-            padding: 10px 0;
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-        }
-
-        /* SCROLL SHADOW */
-        .navbar-scrolled {
-            background: var(--white) !important;
+            z-index: 1000;
+            background: rgba(8, 47, 224, 0.664);
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
             box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
-        .navbar-nav {
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
         }
 
         /* Logo */
@@ -131,38 +145,59 @@
             }
         }
 
-
-
-
-
         .nav-gap>li {
             margin: 0 4px;
         }
 
-        /* NAV LINKS — DESKTOP STYLE */
+        /* Desktop Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
         .nav-link {
-            font-weight: 500;
-            color: #333 !important;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
             padding: 8px 15px;
-            margin: 0 5px;
-            text-align: center;
-            display: block;
+            border-radius: 5px;
+            transition: var(--transition);
         }
 
         .nav-link:hover {
-            color: var(--bjp-orange) !important;
+            color: var(--bjp-orange);
+            background: rgba(230, 119, 8, 0.1);
         }
 
-        /* LANGUAGE BUTTON */
-        #lang-btn {
+        /* RIGHT SIDE MENU ICONS (MODIFIED) */
+        .nav-right-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-link {
+            color: var(--bjp-blue);
+            font-size: 1.3rem;
+            transition: var(--transition);
             cursor: pointer;
-            font-weight: bold;
+        }
+
+        .icon-link:hover {
+            color: var(--bjp-orange);
+            transform: translateY(-2px);
+        }
+
+        #lang-btn {
             border: 2px solid var(--bjp-orange);
             color: var(--bjp-orange);
             background: transparent;
+            font-weight: 700;
             padding: 5px 15px;
             border-radius: 20px;
-            transition: 0.3s;
+            cursor: pointer;
+            transition: var(--transition);
         }
 
         #lang-btn:hover {
@@ -170,515 +205,277 @@
             color: var(--white);
         }
 
-        /* ORANGE BUTTON */
-        .btn-orange {
-            background: var(--bjp-orange);
-            color: var(--white) !important;
-            font-weight: 600;
-            border-radius: 8px;
-            padding: 10px 20px;
-            border: none;
+        /* =========================================
+   HERO SLIDER
+========================================= */
+        .slider-section {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* MARATHI TEXT */
-        .lang-mr {
-            display: none;
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9);
         }
 
-        /* ===================== PARTY SECTION ===================== */
-        .container {
+        /* =========================================
+   CARDS GRID (As per screenshot)
+========================================= */
+        .content-section {
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        /* Party boxes */
-        .party-box {
-            display: flex;
-            align-items: center;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
-            opacity: 0;
-            animation: fadeSlideIn 1s ease forwards;
-            transition: transform 0.3s;
+        }
+
+        .party-box {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 0;
+            /* Image goes to top */
+            overflow: hidden;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
         .party-box:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
 
-        /* Alternate layout for even boxes */
-        .party-box:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        /* Image in party box */
         .party-image {
-            width: 50%;
-            border-radius: 15px;
+            width: 100%;
+            height: 220px;
             object-fit: cover;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .party-box:hover .party-image {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Text in party box */
         .party-text {
-            width: 50%;
+            padding: 25px;
+            color: var(--text-dark);
         }
 
         .party-text h3 {
-            color: var(--bjp-orange);
+            color: #d85a0d;
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
 
-        .party-text p {
-            line-height: 1.6;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        /* ===================== RESPONSIVE ===================== */
-        @media (max-width: 991px) {
-            .party-box {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .party-image,
-            .party-text {
-                width: 100%;
-            }
-
-            .party-text h3 {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .party-text h3 {
-                font-size: 1.2rem;
-            }
-
-            .party-text p {
-                font-size: 0.95rem;
-            }
-        }
-
-        /* ===================== FOOTER ===================== */
+        /* =========================================
+   FOOTER (As per screenshot)
+========================================= */
         footer {
             background: var(--footer-bg);
-            color: #bbb;
-            padding: 50px 0;
+            padding: 60px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--bjp-orange);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
 
         .footer-link {
-            color: #bbb;
+            color: #eb920c;
             text-decoration: none;
-            transition: 0.3s;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            transition: 0.3s;
         }
 
         .footer-link:hover {
-            color: var(--bjp-orange);
-            padding-left: 5px;
+            color: var(--white);
+            transform: translateX(5px);
         }
 
-        .text-orange {
-            color: var(--bjp-orange) !important;
-        }
+        /* =========================================
+   RESPONSIVE DESIGN
+========================================= */
 
-        /* ===================== MOBILE RESPONSIVE NAV ===================== */
+        /* Tablet & Mobile Menu Toggle */
         @media (max-width: 991px) {
-            .navbar-nav {
-                width: 100%;
-                justify-content: flex-end;
-                align-items: flex-end;
-                text-align: right;
+            .nav-menu {
+                display: none;
+                /* Hide standard nav for a mobile burger menu */
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .slider-section {
+                height: 300px;
+            }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .brand-text {
+                font-size: 0.9rem;
+            }
+
+            .nav-right-icons {
                 gap: 10px;
             }
 
-            .nav-link {
-                width: 100%;
-                padding: 14px 0;
+            .icon-link {
                 font-size: 1.1rem;
-                border-bottom: 1px solid #eee;
             }
 
-            .navbar-nav .nav-item:last-child .nav-link {
-                border-bottom: none;
+            #lang-btn {
+                padding: 4px 10px;
+                font-size: 0.8rem;
             }
 
-            .navbar-collapse {
-                background: var(--white);
-                padding: 25px 20px;
-                border-radius: 12px;
-                margin-top: 12px;
-                box-shadow: var(--shadow);
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-end;
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            /* Toggle Icon Right */
-            .navbar-toggler {
-                margin-left: auto;
-                border: none;
-                outline: none;
-                box-shadow: none !important;
-            }
-
-            .navbar-toggler-icon {
-                width: 30px;
-                height: 30px;
-            }
-
-            /* Dropdown Menu – Right Align */
-            .dropdown-menu {
-                text-align: right;
-                border: none;
-                background: #f8f9fa;
-                width: 100%;
-                padding: 15px 0;
-            }
-
-            .dropdown-item {
-                width: 100%;
-                text-align: right;
-                padding: 10px 20px;
-                font-size: 1.05rem;
-                color: var(--text-dark) !important;
-            }
-
-            .dropdown-item:hover {
-                background: var(--bjp-orange);
-                color: white !important;
-            }
-
-            /* Swap order on mobile */
-            .mobile-order-swap {
-                display: flex;
-                flex-direction: column-reverse;
+            .grid-container {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* SMALL MOBILE FIX */
+        /* Extra Small Screens */
         @media (max-width: 480px) {
             .brand-logo {
                 height: 40px;
             }
 
-            #lang-btn {
-                padding: 5px 10px;
+            .slider-section {
+                height: 220px;
             }
         }
 
-        :root {
-            --bjp-orange: #ff9933;
-            --text-dark: #1a1a1a;
-            --white: #ffffff;
-            --footer-bg: #212529;
-            --bjp-blue: #0d65bd;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        /* =========================================
+   REFINED MOBILE NAVIGATION (CENTERED)
+========================================= */
+
+        @media (max-width: 991px) {
+
+            /* Main container for the collapsible menu */
+            .navbar-collapse {
+                background: var(--white);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 30px 20px;
+                box-shadow: var(--shadow);
+                border-bottom: 3px solid var(--bjp-orange);
+
+                /* Centering Logic */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            /* Centering the Nav List */
+            .nav-menu {
+                display: flex;
+                /* Overriding 'none' to show in mobile toggle */
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            /* Individual Link Styling */
+            .nav-link {
+                display: inline-block;
+                width: auto;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                border-bottom: 1px solid transparent;
+                transition: var(--transition);
+            }
+
+            .nav-link:hover {
+                border-bottom: 1px solid var(--bjp-orange);
+                background: none;
+                /* Cleaner look for centered text */
+            }
+
+            /* Centering Right Side Icons (Lang Btn & Search) */
+            .nav-right-icons {
+                flex-direction: column;
+                /* Stack icons for better mobile center */
+                gap: 20px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            #lang-btn {
+                padding: 8px 25px;
+                font-size: 1rem;
+                width: fit-content;
+                /* Keeps button centered without stretching */
+            }
+
+            /* Burger/Toggler Icon alignment */
+            .navbar-toggler {
+                margin-left: auto;
+                /* Keeps the burger on the right while content centers */
+                border: none;
+                background: transparent;
+                cursor: pointer;
+            }
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bjp-blue);
-            color: var(--white);
-            overflow-x: hidden;
-            padding-top: 80px;
+        /* =========================================
+   UPDATED CARDS & FOOTER FIXES
+========================================= */
+
+        /* Ensure the content section handles centering for small screens */
+        .content-section {
+            text-align: center;
         }
 
-        /* HEADER / NAVBAR */
-        .main-header {
-            transition: all 0.3s ease;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-scrolled {
-            background: var(--white) !important;
-            box-shadow: var(--shadow);
-        }
-
-        .navbar-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .brand-logo {
-            height: 50px;
-            width: auto;
-            transition: 0.3s ease;
-        }
-
-        .brand-text {
-            color: var(--white);
-            font-size: 1.1rem;
+        .grid-container {
             display: flex;
             flex-direction: column;
-            line-height: 1.2;
-            transition: 0.3s ease;
-        }
-
-        .brand-animate:hover .brand-logo {
-            transform: scale(1.1) rotate(-3deg);
-        }
-
-        .brand-animate:hover .brand-text {
-            color: #f51414;
-        }
-
-        .brand-animate {
-            animation: fadeSlideIn 1s ease forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .nav-gap>li {
-            margin: 0 4px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: #333 !important;
-            padding: 8px 15px;
-            margin: 0 5px;
-            text-align: center;
-            display: block;
-        }
-
-        .nav-link:hover {
-            color: var(--bjp-orange) !important;
-        }
-
-        #lang-btn {
-            cursor: pointer;
-            font-weight: bold;
-            border: 2px solid var(--bjp-orange);
-            color: var(--bjp-orange);
-            background: transparent;
-            padding: 5px 15px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        #lang-btn:hover {
-            background: var(--bjp-orange);
-            color: var(--white);
-        }
-
-        .btn-orange {
-            background: var(--bjp-orange);
-            color: var(--white) !important;
-            font-weight: 600;
-            border-radius: 8px;
-            padding: 10px 20px;
-            border: none;
-        }
-
-        .lang-mr {
-            display: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .party-box {
-            display: flex;
             align-items: center;
             gap: 30px;
-            margin-bottom: 50px;
-            opacity: 0;
-            transition: transform 0.3s;
         }
 
-        .party-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .party-box:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .party-image {
-            width: 50%;
-            border-radius: 15px;
-            object-fit: cover;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .party-box:hover .party-image {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .party-text {
-            width: 50%;
-        }
-
-        .party-text h3 {
-            color: var(--bjp-orange);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .party-text p {
-            line-height: 1.6;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        @media (max-width: 991px) {
-            .party-box {
+        /* Footer link centering for mobile */
+        @media (max-width: 768px) {
+            .footer-col {
+                display: flex;
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
             }
 
-            .party-image,
-            .party-text {
-                width: 100%;
+            .footer-link:hover {
+                transform: scale(1.05);
+                /* Centered hover effect */
             }
-
-            .party-text h3 {
-                font-size: 1.3rem;
-            }
-
-            .navbar-nav {
-                width: 100%;
-                justify-content: flex-end;
-                align-items: flex-end;
-                text-align: right;
-                gap: 10px;
-            }
-
-            .nav-link {
-                width: 100%;
-                padding: 14px 0;
-                font-size: 1.1rem;
-                border-bottom: 1px solid #eee;
-            }
-
-            .navbar-nav .nav-item:last-child .nav-link {
-                border-bottom: none;
-            }
-
-            .navbar-collapse {
-                background: var(--white);
-                padding: 25px 20px;
-                border-radius: 12px;
-                margin-top: 12px;
-                box-shadow: var(--shadow);
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-end;
-            }
-
-            .navbar-toggler {
-                margin-left: auto;
-                border: none;
-                outline: none;
-                box-shadow: none !important;
-            }
-
-            .navbar-toggler-icon {
-                width: 30px;
-                height: 30px;
-            }
-
-            .dropdown-menu {
-                text-align: right;
-                border: none;
-                background: #f8f9fa;
-                width: 100%;
-                padding: 15px 0;
-            }
-
-            .dropdown-item {
-                width: 100%;
-                text-align: right;
-                padding: 10px 20px;
-                font-size: 1.05rem;
-                color: var(--text-dark) !important;
-            }
-
-            .dropdown-item:hover {
-                background: var(--bjp-orange);
-                color: white !important;
-            }
-
-            .mobile-order-swap {
-                display: flex;
-                flex-direction: column-reverse;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .party-text h3 {
-                font-size: 1.2rem;
-            }
-
-            .party-text p {
-                font-size: 0.95rem;
-            }
-
-            .brand-logo {
-                height: 40px;
-            }
-
-            #lang-btn {
-                padding: 5px 10px;
-            }
-        }
-
-        footer {
-            background: var(--footer-bg);
-            color: #bbb;
-            padding: 50px 0;
-        }
-
-        .footer-link {
-            color: #bbb;
-            text-decoration: none;
-            transition: 0.3s;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .footer-link:hover {
-            color: var(--bjp-orange);
-            padding-left: 5px;
-        }
-
-        .text-orange {
-            color: var(--bjp-orange) !important;
         }
     </style>
 
@@ -692,42 +489,74 @@
 
             <!-- BRAND -->
             <a class="navbar-brand d-flex align-items-center brand-animate" href="index.html">
-                <img src="./assets/Images/logo.png" alt="Logo" class="brand-logo" />
+                <img src="./assets/Images/logo.png" alt="Logo" class="brand-logo">
                 <span class="ms-2 fw-bold brand-text">
-                    <span class="lang-en">Sarala Mandar Bahekar</span>
+                    <span class="lang-en">SARALA MANDAR BAHEKAR</span>
                     <span class="lang-mr">सरला मंदार बाहेकर</span>
                 </span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- NAV TOGGLER -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- NAV MENU -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-3">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><span class="lang-en">Home</span><span
-                                class="lang-mr">मुख्यपृष्ठ</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html"><span
-                                class="lang-en">About</span><span class="lang-mr">माझ्याबद्दल</span></a></li>
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <span class="lang-en">More</span><span class="lang-mr">अधिक</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <span class="lang-en">Home</span>
+                            <span class="lang-mr">मुख्यपृष्ठ</span>
                         </a>
-                        <ul class="dropdown-menu shadow">
-                            <li><a class="dropdown-item" href="party.html"><span class="lang-en">Party Info</span><span
-                                        class="lang-mr">पक्ष माहिती</span></a></li>
-                            <li><a class="dropdown-item" href="vision.html"><span class="lang-en">My Vision</span><span
-                                        class="lang-mr">माझा दृष्टिकोन</span></a></li>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">
+                            <span class="lang-en">About</span>
+                            <span class="lang-mr">माझ्याबद्दल</span>
+                        </a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="lang-en">More</span>
+                            <span class="lang-mr">अधिक</span>
+                        </a>
+
+                        <ul class="dropdown-menu shadow" aria-labelledby="moreDropdown">
+                            <li>
+                                <a class="dropdown-item" href="party.html">
+                                    <span class="lang-en">Party Info</span>
+                                    <span class="lang-mr">पक्ष माहिती</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="vision.html">
+                                    <span class="lang-en">My Vision</span>
+                                    <span class="lang-mr">माझा दृष्टिकोन</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
-                    <li class="nav-item"><button id="lang-btn" onclick="toggleLanguage()">मराठी</button></li>
+                    <!-- LANGUAGE SWITCH -->
+                    <li class="nav-item">
+                        <button id="lang-btn" onclick="toggleLanguage()">मराठी</button>
+                    </li>
+
+                    <!-- CONTACT BUTTON -->
                     <li class="nav-item">
                         <a href="contact.html" class="btn btn-orange">
-                            <span class="lang-en">Contact Us</span><span class="lang-mr">संपर्क करा</span>
+                            <span class="lang-en">Contact Us</span>
+                            <span class="lang-mr">संपर्क करा</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -735,88 +564,116 @@
 
 
 
-    <h1 class="page-title text-center my-5">
-        <span class="lang-en">BJP – Buldhana District</span>
-        <span class="lang-mr">भा.ज.पा – बुलढाणा जिल्हा</span>
-    </h1>
+    <section class="py-5 mt-4">
+        <h1 class="page-title text-center mb-5">
+            <span class="lang-en">BJP – Buldhana District</span>
+            <span class="lang-mr">भा.ज.पा – बुलढाणा जिल्हा</span>
+        </h1>
 
-    <div class="container">
+        <div class="container">
+            <div class="row g-4">
 
-        <!-- PARTY CARDS -->
-        <div class="party-box" data-aos="fade-up">
-            <img src="./assets/Images/party 3.webp" alt="BJP Buldhana" class="party-image">
-            <div class="party-text">
-                <h3><span class="lang-en">About BJP – Buldhana</span><span class="lang-mr">बुलढाणा – भाजपा विषयी</span>
-                </h3>
-                <p><span class="lang-en">The <span>Bharatiya Janata Party</span> in Buldhana is committed to
-                        strengthening public welfare, rural development, education, agriculture support, and modern
-                        infrastructure.</span><span class="lang-mr"><span>भारतीय जनता पार्टी</span> बुलढाण्यात
-                        लोककल्याण, ग्रामीण विकास, शिक्षण, कृषी समर्थन आणि आधुनिक पायाभूत सुविधा मजबूत करण्यासाठी कटिबद्ध
-                        आहे.</span></p>
-                <p><span class="lang-en">BJP leaders and volunteers continue working tirelessly to build a stronger
-                        future based on empowerment, growth, and unity.</span><span class="lang-mr">भाजपा नेते आणि
-                        स्वयंसेवक सशक्तीकरण, विकास आणि एकतेच्या आधारावर मजबूत भविष्य घडवण्यासाठी सातत्याने कार्यरत
-                        आहेत.</span></p>
+                <!-- CARD 1 -->
+                <div class="col-md-6">
+                    <div class="party-box" data-aos="fade-up">
+                        <img src="./assets/Images/party 3.webp" alt="BJP Buldhana" class="party-image">
+                        <div class="party-text">
+                            <h3>
+                                <span class="lang-en">About BJP – Buldhana</span>
+                                <span class="lang-mr">बुलढाणा – भाजपा विषयी</span>
+                            </h3>
+                            <p>
+                                <span class="lang-en">
+                                    The Bharatiya Janata Party in Buldhana is committed to strengthening public welfare,
+                                    rural development, education, agriculture support, and modern infrastructure.
+                                </span>
+                                <span class="lang-mr">
+                                    भारतीय जनता पार्टी बुलढाण्यात लोककल्याण, ग्रामीण विकास, शिक्षण, कृषी समर्थन आणि
+                                    आधुनिक
+                                    पायाभूत सुविधा मजबूत करण्यासाठी कटिबद्ध आहे.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col-md-6">
+                    <div class="party-box" data-aos="fade-up">
+                        <img src="./assets/Images/party4.jpg" alt="BJP Development" class="party-image">
+                        <div class="party-text">
+                            <h3>
+                                <span class="lang-en">Public Development</span>
+                                <span class="lang-mr">लोकविकास</span>
+                            </h3>
+                            <p>
+                                <span class="lang-en">
+                                    BJP continues to uplift villages, schools, and rural areas with strong welfare
+                                    programs.
+                                </span>
+                                <span class="lang-mr">
+                                    भाजपा गाव, शाळा आणि ग्रामीण भागाच्या उन्नतीसाठी मजबूत कल्याणकारी योजना राबवत आहे.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col-md-6">
+                    <div class="party-box" data-aos="fade-up">
+                        <img src="./assets/Images/party 2.avif" alt="BJP Progress" class="party-image">
+                        <div class="party-text">
+                            <h3>
+                                <span class="lang-en">Progress Mission</span>
+                                <span class="lang-mr">प्रगती मिशन</span>
+                            </h3>
+                            <p>
+                                <span class="lang-en">
+                                    BJP leaders believe in progress through unity, education, healthcare, and
+                                    technology.
+                                </span>
+                                <span class="lang-mr">
+                                    शिक्षण, आरोग्य आणि तंत्रज्ञानाच्या माध्यमातून एकतेतून प्रगती हा भाजपाचा ध्यास आहे.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="col-md-6">
+                    <div class="party-box" data-aos="fade-up">
+                        <img src="./assets/Images/public bjp.avif" alt="BJP Support" class="party-image">
+                        <div class="party-text">
+                            <h3>
+                                <span class="lang-en">Public Support</span>
+                                <span class="lang-mr">जनसमर्थन</span>
+                            </h3>
+                            <p>
+                                <span class="lang-en">
+                                    BJP works to provide support in medical camps, sanitation missions, and public
+                                    welfare.
+                                </span>
+                                <span class="lang-mr">
+                                    वैद्यकीय शिबिरे, स्वच्छता मिशन आणि लोककल्याण उपक्रमात भाजपा नेहमी सक्रिय असते.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
 
-        <!-- CARD 1 -->
-        <div class="party-box" data-aos="fade-up" data-aos-delay="100">
-            <img src="./assets/Images/buldhan4.jfif" alt="BJP Social Welfare" class="party-image">
-            <div class="party-text">
-                <h3><span class="lang-en">Social Welfare Initiatives</span><span class="lang-mr">सामाजिक कल्याण
-                        उपक्रम</span></h3>
-                <p><span class="lang-en">BJP supports farmers, women, and tribal groups through social reform
-                        initiatives.</span><span class="lang-mr">भाजपा शेतकरी, महिला आणि आदिवासी गटांसाठी सामाजिक
-                        सुधारणा उपक्रम राबवत आहे.</span></p>
-            </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="party-box" data-aos="fade-up" data-aos-delay="200">
-            <img src="./assets/Images/party4.jpg" alt="BJP Education" class="party-image">
-            <div class="party-text">
-                <h3><span class="lang-en">Education Development</span><span class="lang-mr">शिक्षण विकास</span></h3>
-                <p><span class="lang-en">Schools have been upgraded, digital classrooms introduced, and scholarship
-                        support expanded to uplift the youth of Buldhana.</span><span class="lang-mr">शाळा सुधारण्यात
-                        आल्या आहेत, डिजिटल वर्गखोली सुरु करण्यात आली आहे, आणि विद्यार्थ्यांसाठी शिष्यवृत्ती व मदत
-                        वाढवण्यात आली आहे.</span></p>
-            </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="party-box" data-aos="fade-up" data-aos-delay="300">
-            <img src="./assets/Images/party 2.avif" alt="BJP Infrastructure" class="party-image">
-            <div class="party-text">
-                <h3><span class="lang-en">Infrastructure Growth</span><span class="lang-mr">पायाभूत सुविधा वाढ</span>
-                </h3>
-                <p><span class="lang-en">From roads to employment hubs, the region is witnessing major
-                        improvements.</span><span class="lang-mr">रस्ते, रोजगार हब्स यासह क्षेत्रात महत्त्वपूर्ण सुधारणा
-                        होत आहेत.</span></p>
-            </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="party-box" data-aos="fade-up" data-aos-delay="400">
-            <img src="./assets/Images/public bjp.avif" alt="BJP Public Service" class="party-image">
-            <div class="party-text">
-                <h3><span class="lang-en">Public Service Support</span><span class="lang-mr">सार्वजनिक सेवा
-                        समर्थन</span></h3>
-                <p><span class="lang-en">Medical outreach, student welfare, sanitation campaigns enhance citizens’
-                        well-being.</span><span class="lang-mr">वैद्यकीय शिबिरे, विद्यार्थ्यांसाठी उपक्रम, स्वच्छता
-                        मोहिमा नागरिकांच्या कल्याणासाठी सक्रियपणे राबवले जात आहेत.</span></p>
-            </div>
-        </div>
-
-    </div>
 
     <footer class="pt-5 pb-4">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="text-orange fw-bold mb-4">
-                        <span class="lang-en">Sarala Mandar Bahekar</span><span class="lang-mr">सरला मंदार
-                            बाहेकर</span>
+                        <span class="lang-en">Sarala Mandar Bahekar</span><span class="lang-mr">सरला मंदार बाहेकर</span>
                     </h5>
                     <p class="small">
                         <span class="lang-en">Working for the holistic development of Buldhana district.</span>
@@ -840,14 +697,12 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white fw-bold mb-4"><span class="lang-en">Location</span><span
                             class="lang-mr">ठिकाण</span></h5>
-                    <p class="small"><i class="fas fa-map-marker-alt me-2 text-orange"></i> Buldhana,
-                        Maharashtra</p>
+                    <p class="small"><i class="fas fa-map-marker-alt me-2 text-orange"></i> Buldhana, Maharashtra</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white fw-bold mb-4"><span class="lang-en">Contact</span><span
                             class="lang-mr">संपर्क</span></h5>
-                    <p class="small mb-1"><i class="fas fa-envelope me-2 text-orange"></i> info@saralabahekar.in
-                    </p>
+                    <p class="small mb-1"><i class="fas fa-envelope me-2 text-orange"></i> info@saralabahekar.in</p>
                     <p class="small"><i class="fas fa-phone me-2 text-orange"></i> +91 98765 43210</p>
                 </div>
             </div>
@@ -858,6 +713,7 @@
             </p>
         </div>
     </footer>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
